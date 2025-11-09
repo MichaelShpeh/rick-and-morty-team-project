@@ -1,0 +1,74 @@
+<section id="characters">
+    <h2>Characters</h2>
+
+    <!-- Фільтри -->
+    <form id="characters-filters">
+        <!-- Name -->
+        <div class="filter-group">
+            <label for="filter-name">Name</label>
+            <input type="search" id="filter-name" name="name" placeholder="Enter name" />
+            <button type="submit">Search</button>
+        </div>
+
+        <!-- Status -->
+        <div class="filter-group">
+            <label for="filter-status">Status</label>
+            <select id="filter-status" name="status">
+                <option value="alive" selected>Alive</option>
+                <option value="dead">Dead</option>
+                <option value="unknown">Unknown</option>
+            </select>
+        </div>
+
+        <!-- Species -->
+        <div class="filter-group">
+            <label for="filter-species">Species</label>
+            <select id="filter-species" name="species">
+                <option value="human" selected>Human</option>
+                <option value="alien">Alien</option>
+                <option value="mythological_creature">Mythological Creature</option>
+                <option value="humanoid">Humanoid</option>
+                <option value="animal">Animal</option>
+                <option value="cronenberg">Cronenberg</option>
+                <option value="poopybutthole">Poopybutthole</option>
+                <option value="robot">Robot</option>
+                <option value="disease">Disease</option>
+            </select>
+        </div>
+
+        <!-- Type -->
+        <div class="filter-group">
+            <label for="filter-type">Type</label>
+            <select id="filter-type" name="type">
+                <option value="parasite" selected>Parasite</option>
+                <option value="human with antennae">Human with antennae</option>
+                <option value="superhuman">Superhuman</option>
+                <option value="genetic experiment">Genetic experiment</option>
+                <option value="fish-person">Fish-Person</option>
+                <option value="cromulon">Cromulon</option>
+            </select>
+        </div>
+
+        <!-- Gender -->
+        <div class="filter-group">
+            <label for="filter-gender">Gender</label>
+            <select id="filter-gender" name="gender">
+                <option value="all" selected>All</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="genderless">Genderless</option>
+                <option value="unknown">Unknown</option>
+            </select>
+        </div>
+    </form>
+
+    <!-- Картки персонажів -->
+    <div id="characters-list"></div>
+
+    <!-- Кнопка "Load more" -->
+    <div class="characters-load-more-wrapper">
+        <button id="characters-load-more" type="button">
+            Load more
+        </button>
+    </div>
+</section>
