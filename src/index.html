@@ -14,14 +14,26 @@
 </head>
 
 <body>
-  <h1>Hello Valerii!!!</h1>
-  <h1>Hello Pavlo!!!</h1>
-  <h1>Hello David!!!</h1>
-  <h1>Hello Vladyslav!!!</h1>
-  <script type="module" src="./js/main.js"></script>
+  <header class="header">
+    <h2>header</h2>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <picture class="hero-image">
+          <source srcset="./images/hero-t-1x.png    1x,
+                        ./images/hero-t-2x.png    2x" media="(min-width: 768px)">
+          <source srcset="./images/hero-m-1x.png   1x, 
+                        ./images/hero-m-2x.png  2x" media="(min-width: 320px)">
+          <img src="./images/hero-m-1x.png" alt="rick and morty">
+        </picture>
+      </div>
+    </section>
+  </main>
 
   <a href="./characters.html">second-page</a>
   <a href="./third-page.html">third-page</a>
+  <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>
