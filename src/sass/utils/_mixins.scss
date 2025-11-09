@@ -21,21 +21,3 @@
         width: 1440px;
     }
 }
-
-@mixin md-container {
-    @media screen and (min-width: getBreakpoint(md)) {
-        width: 335px;
-    }
-}
-
-@mixin lg-container {
-    @media screen and (min-width: getBreakpoint(lg)) {
-        width: 704px;
-    }
-}
-
-@mixin xl-container {
-    @media screen and (min-width: getBreakpoint(xl)) {
-        width: 1184px;
-    }
-}
