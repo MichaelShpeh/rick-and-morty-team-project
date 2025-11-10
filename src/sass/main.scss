@@ -1,8 +1,10 @@
 @import './base/reset';
 @import './base/base';
 @import './components/container';
-@import './layout/episodes-pagination';
-@import './layout/header';
+
+@import './layout/promo.scss';
+@import './layout/episodes-pagination.scss';
+
 @import './utils/breakpoints';
 @import './utils/mixins';
 @import './utils/variables';
