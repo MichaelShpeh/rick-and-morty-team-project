@@ -1,22 +1,16 @@
 @mixin sm-breakpoint {
-    @media screen and (min-width: getBreakpoint(sm)) {
-        width: 320px;
-    }
-}
-
-@mixin md-breakpoint {
     @media screen and (min-width: getBreakpoint(md)) {
         width: 375px;
     }
 }
 
-@mixin lg-breakpoint {
+@mixin md-breakpoint {
     @media screen and (min-width: getBreakpoint(lg)) {
         width: 768px;
     }
 }
 
-@mixin xl-breakpoint {
+@mixin lg-breakpoint {
     @media screen and (min-width: getBreakpoint(xl)) {
         width: 1440px;
     }
