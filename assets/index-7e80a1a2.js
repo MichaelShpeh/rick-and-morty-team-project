@@ -1,1 +1,0 @@
-import"./modulepreload-polyfill-3cfb730f.js";/* empty css             */console.log("main_character.js");const c=document.querySelector(".main-characters__image");console.log(c);c.src="../images/rick-desktop-1x.jpg";
