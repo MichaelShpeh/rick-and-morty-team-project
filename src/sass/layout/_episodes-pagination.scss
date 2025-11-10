@@ -1,0 +1,54 @@
+.episodes__list-item {
+	width: 335px;
+	height: 250px;
+	position: relative;
+	border: 2px solid var(--green);
+	border-radius: 18px;
+
+	.episodes__name {
+		font-family: var(--font-family);
+		font-weight: 600;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+		font-size: 16px;
+		line-height: 112%;
+		color: var(--green);
+	}
+
+	.episodes__season--title+.episodes__airdate--title {
+		font-family: var(--font-family);
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 117%;
+		color: rgba(250, 250, 250, 0.5);
+	}
+
+    .episodes__season--title {
+        top: 194px;
+        left: 20px;
+    }
+
+    .episodes__airdate--title {
+        top: 194px;
+        left: 81px;
+    }
+
+	.episodes__season+.episodes__airdate {
+        font-family: var(--font-family);
+font-weight: 400;
+font-size: 14px;
+line-height: 129%;
+color: #fafafa;
+	}
+
+    .episodes__season {
+        top: 212px;
+        left: 20px;
+	}
+
+	.episodes__airdate {
+        top: 212px;
+        left: 81px;
+	}
+}
