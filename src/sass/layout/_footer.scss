@@ -1,0 +1,39 @@
+.footer {
+	background-color: #0d171d;
+
+	&__logo {
+		color: #111111;
+		position: relative;
+		width: 149px;
+		height: 107px;
+
+		> img {
+			width: 71px;
+			height: 60px;
+		}
+
+		> div {
+			border-radius: 1000px;
+			font-size: 16px;
+			font-weight: 600;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+
+			background-color: #a1d737;
+			width: 120px;
+			height: 46px;
+			top: 54px;
+
+			&:last-child {
+				background-color: #daf836;
+				width: 97px;
+				height: 42px;
+				transform: rotate(32deg);
+				right: 0px;
+				top: 14px;
+			}
+		}
+	}
+}
