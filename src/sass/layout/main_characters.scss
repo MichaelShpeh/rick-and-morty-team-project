@@ -1,3 +1,6 @@
 .main-characters{
-	
+	&__image{
+		background-color: tomato;
+		outline:  1px solid tomato;
+	}
 }
