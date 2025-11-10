@@ -1,15 +1,15 @@
 .container {
     width: 320px;
 
-    @media screen and (min-width: getBreakpoint(md)) {
+    @media screen and (min-width: getBreakpoint(sm)) {
         width: 335px;
     }
 
-    @media screen and (min-width: getBreakpoint(lg)) {
+    @media screen and (min-width: getBreakpoint(md)) {
         width: 704px;
     }
 
-    @media screen and (min-width: getBreakpoint(xl)) {
+    @media screen and (min-width: getBreakpoint(lg)) {
         width: 1184px;
     }
 }
