@@ -23,19 +23,70 @@
 
 		
 		<script type="module" crossorigin src="/rick-and-morty-team-project/assets/modulepreload-polyfill-3cfb730f.js"></script>
-		<link rel="stylesheet" href="/rick-and-morty-team-project/assets/main-97c41e3d.css">
+		<link rel="stylesheet" href="/rick-and-morty-team-project/assets/main-ac46fb7f.css">
 	</head>
 
 <body>
-  <h1>Hello Valerii!!!</h1>
-  <h1>Hello Pavlo!!!</h1>
-  <h1>Hello David!!!</h1>
-  <h1>Hello Vladyslav!!!</h1>
-  
+	<header>
+		<header class="header">
+	<div class="container">
+		<nav class="header__navbar">
+			<a
+				href="./index.html"
+				class="header__logo"
+			>
+				<img
+					src="../images/logo-sm.png"
+					alt=""
+				/>
+			</a>
 
-  <a href="./characters.html">second-page</a>
-  <a href="./third-page.html">third-page</a>
-  <section class="main-characters">
+			<ul class="header__list">
+				<li class="header__list-item">
+					<a
+						href="./characters.html"
+						class="header__list-link"
+						>Characters</a
+					>
+				</li>
+				<li class="header__list-item">
+					<a
+						href="./episodes.html"
+						class="header__list-link"
+						>Episodes</a
+					>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="header__search">
+			<label
+				for="headerSearchInput"
+				class="header__search-label"
+			>
+				<svg
+					class="icon"
+					width="16"
+					height="16"
+				>
+					<use xlink:href="/rick-and-morty-team-project/assets/sprites-a1bb3670.svg#search"></use>
+				</svg>
+			</label>
+			<input
+				type="text"
+				id="headerSearchInput"
+				name="headerSearchInput"
+				placeholder="Search"
+			/>
+		</div>
+	</div>
+</header>
+
+	</header>
+<main>
+	<a href="./characters.html">second-page</a>
+	<a href="./third-page.html">third-page</a>
+	<section class="main-characters">
   <div class="main-characters__header">
     <h2 class="main-characters__title">
       <span class="main-characters__title-badge">Main</span>
@@ -97,7 +148,7 @@
   </div>
 </section>
 
-  <section class="rnm-promo">
+	<section class="rnm-promo">
   <div class="container">
 
     <!-- Ліва частина з текстом -->
@@ -157,6 +208,10 @@
     </div>
   </div>
 </section>
+
+</main>
+<footer></footer>
+
 
 </body>
 
