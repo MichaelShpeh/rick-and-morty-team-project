@@ -1,0 +1,52 @@
+.container{
+
+	margin: 0 auto;
+}
+.rnm-promo{
+	border-radius: 100px;
+	width: 375px;
+	height: 566px;
+	background: #0D171D;
+	padding: 80px 0 0 20px;
+	&__slider{
+		display: block;
+
+		&--track{
+		display: flex;
+		margin: 64px 0 32px 0;
+		}
+	}
+	&__title{
+		font-family: "Montserrat", sans-serif;
+		font-weight: 600;
+		font-size: 28px;
+		line-height: 114%;
+		color: #fafafa;
+
+		width: 306px;
+		&-highlight{
+			
+			border-radius: 44px;
+			width: 119px;
+			height: 32px;
+
+			background: #A1D737;
+		}
+	}
+	&__button{
+		font-family: "Montserrat", sans-serif;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 129%;
+
+		border-radius: 100px;
+		padding: 10px 20px;
+		width: 96px;
+		height: 36px;
+		background: #A1D737;
+		
+		float: right;
+		right: 0;
+		margin-right: 20px;
+	}
+}
