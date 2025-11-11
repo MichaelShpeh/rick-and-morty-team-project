@@ -3,12 +3,97 @@
 const API_URL = "https://rickandmortyapi.com/api/character";
 
 const partialUrl = new URL("../partials/characters.html", import.meta.url);
-const cardTemplateUrl = new URL("../templates/character-card.hbs", import.meta.url);
+const cardTemplateUrl = new URL(
+    "../templates/character-card.hbs",
+    import.meta.url
+);
 
 let cardTemplate = null;
 let currentPage = 1;
 let totalPages = null;
 let isLoading = false;
+
+/* ====================== DROPDOWNS ======================= */
+
+// закриває всі відкриті дропдауни
+function closeAllDropdowns() {
+    document
+        .querySelectorAll(".dropdown.dropdown--open")
+        .forEach((dd) => dd.classList.remove("dropdown--open"));
+}
+
+// ініціалізація всіх кастомних дропдаунів у формі фільтрів
+function initDropdowns() {
+    const dropdowns = document.querySelectorAll(".dropdown");
+    if (!dropdowns.length) return;
+
+    dropdowns.forEach((dropdown) => {
+        const selectName = dropdown.dataset.select; // "status", "species", "type", "gender"
+
+        const trigger = dropdown.querySelector(".dropdown__trigger");
+        const valueEl = dropdown.querySelector(".dropdown__value");
+        const items = dropdown.querySelectorAll(".dropdown__item");
+        const nativeSelect = document.getElementById(`filter-${selectName}`);
+
+        if (!trigger || !valueEl || !items.length || !nativeSelect) return;
+
+        // --- Початкове значення з прихованого select ---
+        const selectedOption = nativeSelect.options[nativeSelect.selectedIndex];
+        if (selectedOption) {
+            const initialVal = selectedOption.value;
+            const initialText = selectedOption.textContent.trim();
+
+            valueEl.textContent = initialText;
+            items.forEach((item) => {
+                item.classList.toggle(
+                    "dropdown__item--selected",
+                    item.dataset.value === initialVal
+                );
+            });
+        }
+
+        // --- Відкрити / закрити по кліку на тригер ---
+        trigger.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const isOpen = dropdown.classList.contains("dropdown--open");
+            closeAllDropdowns(); // закриваємо інші
+            if (!isOpen) {
+                dropdown.classList.add("dropdown--open");
+            }
+        });
+
+        // --- Вибір опції ---
+        items.forEach((item) => {
+            item.addEventListener("click", () => {
+                const val = item.dataset.value;
+                const text = item.textContent.trim();
+
+                // текст у верхній кнопці
+                valueEl.textContent = text;
+
+                // виділяємо вибраний пункт
+                items.forEach((i) =>
+                    i.classList.toggle("dropdown__item--selected", i === item)
+                );
+
+                // оновлюємо прихований select + тригеримо change (на майбутні фільтри)
+                nativeSelect.value = val;
+                nativeSelect.dispatchEvent(new Event("change", { bubbles: true }));
+
+                closeAllDropdowns();
+            });
+        });
+    });
+
+    // --- Закриття всіх дропдаунів по кліку поза ними ---
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest(".dropdown")) {
+            closeAllDropdowns();
+        }
+    });
+}
+
+/* ================== CHARACTERS + LOAD MORE ================== */
 
 // 1. Підставляємо partial у <main id="characters-root">
 async function loadCharactersPartial() {
@@ -65,8 +150,7 @@ function updateLoadMoreButton() {
     const btn = document.getElementById("characters-load-more");
     if (!btn) return;
 
-    const noMorePages =
-        totalPages !== null && currentPage >= totalPages;
+    const noMorePages = totalPages !== null && currentPage >= totalPages;
 
     btn.style.display = noMorePages ? "none" : "inline-block";
     btn.disabled = noMorePages || isLoading;
@@ -115,9 +199,10 @@ function setupLoadMore() {
 
 // 10. Старт
 async function init() {
-    await loadCharactersPartial();   // вставили секцію з картками
-    await loadCardTemplate();        // підготували шаблон
-    setupLoadMore();                 // привʼязали кнопку
+    await loadCharactersPartial();   // вставили секцію з картками + дропдаунами
+    initDropdowns();                 // підʼєднали логіку відкриття/закриття
+    await loadCardTemplate();        // підготували шаблон картки
+    setupLoadMore();                 // привʼязали кнопку Load more
     await loadFirstPage();           // завантажили першу сторінку
 }
 
