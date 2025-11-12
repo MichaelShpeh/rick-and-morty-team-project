@@ -1,5 +1,7 @@
 .container {
     width: 320px;
+    margin: 0 auto;
+    padding: 0 20px;
 
     @media screen and (min-width: getBreakpoint(sm)) {
         width: 335px;
