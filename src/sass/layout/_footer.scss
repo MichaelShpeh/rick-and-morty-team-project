@@ -1,5 +1,10 @@
 .footer {
 	background-color: #0d171d;
+	padding: 40px 0 16px 0;
+
+	> .container {
+		padding: 0;
+	}
 
 	&__logo {
 		color: #111111;
@@ -21,19 +26,74 @@
 			align-items: center;
 			position: absolute;
 
-			background-color: #a1d737;
-			width: 120px;
-			height: 46px;
-			top: 54px;
+			&:nth-child(2) {
+				background-color: #a1d737;
+				width: 120px;
+				height: 46px;
+				top: 54px;
+			}
 
 			&:last-child {
 				background-color: #daf836;
 				width: 97px;
 				height: 42px;
 				transform: rotate(32deg);
-				right: 0px;
+				right: -14px;
 				top: 14px;
 			}
 		}
+	}
+
+	&__container {
+		display: flex;
+		gap: 42px;
+	}
+
+	&__menu {
+		display: flex;
+		gap: 20px;
+		flex-direction: column;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+
+		> li {
+			> a {
+				font-size: 14px;
+				font-weight: 400;
+				line-height: 18px;
+				color: #fafafa;
+			}
+		}
+	}
+
+	&__links {
+		display: flex;
+		gap: 12px;
+
+		> li {
+			> a {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 40px;
+				height: 40px;
+				border: 1px solid #fafafa33;
+				border-radius: 8px;
+				color: #fafafa;
+			}
+		}
+	}
+
+	&__agreement {
+		color: #fafafa66;
+		font-size: 12px;
+		line-height: 14px;
+		font-weight: 400;
+		text-align: center;
+		margin-top: 80px;
 	}
 }

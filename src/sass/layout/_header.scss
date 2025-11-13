@@ -19,7 +19,7 @@
 	}
 
 	&__list {
-		display: flex;
+		display: none;
 		gap: 1px;
 
 		&-item {
@@ -60,6 +60,10 @@
 			transition-property: background-color, color, border-color;
 			transition-duration: 300ms;
 			transition-timing-function: linear;
+		}
+
+		&.active {
+			display: flex;
 		}
 	}
 
