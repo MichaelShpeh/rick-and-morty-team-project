@@ -1,26 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Episodes</title>
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		
+		<script type="module" crossorigin src="/rick-and-morty-team-project/assets/main-2707857b.js"></script>
+		<link rel="stylesheet" href="/rick-and-morty-team-project/assets/main-d3721399.css">
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Episodes</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    
-  <link rel="stylesheet" href="/rick-and-morty-team-project/assets/main-8f87f56b.css">
-</head>
+	<body>
+		<header class="header">
+	<div class="container">
+		<nav class="header__navbar">
+			<a
+				href="./index.html"
+				class="header__logo"
+			>
+				<img
+					src="../images/logo-sm.png"
+					alt=""
+				/>
+			</a>
 
-<body>
-    <a href="./index.html">home</a>
-    <section class="episodes-hero">
+			<ul class="header__list">
+				<li class="header__list-item">
+					<a
+						href="./characters.html"
+						class="header__list-link"
+						>Characters</a
+					>
+				</li>
+				<li class="header__list-item">
+					<a
+						href="./episodes.html"
+						class="header__list-link"
+						>Episodes</a
+					>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="header__search">
+			<label
+				for="headerSearchInput"
+				class="header__search-label"
+			>
+				<svg
+					class="icon"
+					width="16"
+					height="16"
+				>
+					<use xlink:href="/rick-and-morty-team-project/assets/sprites-4149c83d.svg#search"></use>
+				</svg>
+			</label>
+			<input
+				type="text"
+				id="headerSearchInput"
+				name="headerSearchInput"
+				placeholder="Search"
+			/>
+		</div>
+	</div>
+</header>
+
+		<a href="./index.html">home</a>
+		<section class="episodes-hero">
     <h1>Episodes</h1>
     <p>With a comprehensive guide to every episode, you can relive your favorite moments and discover new ones. From the bizarre and hilarious to the emotional and thought-provoking, our episode guide covers it all. </p>
     <img src="./images/image-2.png" alt="">
 </section>
-    <div class="episodes">
+		<div class="episodes">
   <div class="section">
     <label class="episodes__label" for="">Name</label>
     <input class="episodes__input" type="text" placeholder="Enter name">
@@ -42,6 +108,73 @@
   </div>
 </div>
 
-</body>
 
+		<footer class="footer">
+	<div class="container">
+		<div class="footer__container">
+			<div class="footer__logo">
+				<img
+					src="/rick-and-morty-team-project/assets/rickAndMorty-footerLogo-1x-3fe43136.png"
+					alt=""
+				/>
+				<div>Rick and</div>
+				<div>Morty</div>
+			</div>
+
+			<div class="footer__menu">
+				<nav class="footer__nav">
+					<ul class="footer__list">
+						<li>
+							<a href="./characters.html">Characters</a>
+						</li>
+						<li>
+							<a href="./episodes.html">Episodes</a>
+						</li>
+					</ul>
+				</nav>
+
+				<ul class="footer__links">
+					<li>
+						<a href="/">
+							<svg
+								class="icon"
+								width="16"
+								height="16"
+							>
+								<use xlink:href="/rick-and-morty-team-project/assets/sprites-4149c83d.svg#facebook"></use>
+							</svg>
+						</a>
+					</li>
+					<li>
+						<a href="/">
+							<svg
+								class="icon"
+								width="16"
+								height="16"
+							>
+								<use xlink:href="/rick-and-morty-team-project/assets/sprites-4149c83d.svg#twitter"></use>
+							</svg>
+						</a>
+					</li>
+					<li>
+						<a href="/">
+							<svg
+								class="icon"
+								width="16"
+								height="16"
+							>
+								<use xlink:href="/rick-and-morty-team-project/assets/sprites-4149c83d.svg#instagram"></use>
+							</svg>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<p class="footer__agreement">Privacy Policy Public Offering Agreement</p>
+	</div>
+</footer>
+
+		
+	</body>
 </html>
