@@ -1,0 +1,1 @@
+import"./main-299dfb64.js";console.log("main_character.js");const e=document.querySelector(".main-characters__image");console.log(e);e.src=new URL("/rick-and-morty-team-project/assets/rick-desktop-1x-89c321be.jpg",self.location).href;

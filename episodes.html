@@ -21,12 +21,13 @@
 			rel="stylesheet"
 		/>
 		
-		<script type="module" crossorigin src="/rick-and-morty-team-project/assets/main-2707857b.js"></script>
-		<link rel="stylesheet" href="/rick-and-morty-team-project/assets/main-d3721399.css">
+		<script type="module" crossorigin src="/rick-and-morty-team-project/assets/main-299dfb64.js"></script>
+		<link rel="stylesheet" href="/rick-and-morty-team-project/assets/main-8859a910.css">
 	</head>
 
 	<body>
-		<div class="container">
+		<header>
+			<div class="container">
 		<nav class="header__navbar">
 			<a
 				href="./index.html"
@@ -77,36 +78,51 @@
 			/>
 		</div>
 	</div>
+		</header>
 		<a href="./index.html">home</a>
-		<section class="episodes-hero">
+		<main id="main">
+			<section class="episodes-hero">
     <h1>Episodes</h1>
     <p>With a comprehensive guide to every episode, you can relive your favorite moments and discover new ones. From the bizarre and hilarious to the emotional and thought-provoking, our episode guide covers it all. </p>
     <img src="./images/image-2.png" alt="">
 </section>
-		<div class="episodes">
-  <div class="section">
-    <label class="episodes__label" for="">Name</label>
-    <input class="episodes__input" type="text" placeholder="Enter name">
-    <button class="episodes__search"></button>
-    <p class="episodes__text">Episode code</p>
-    <button><span>All seasons</span></button>
+			<div class="episodes">
+  <div class="container">
+    <div class="episodes__search">
+      <label class="episodes__label">Name</label>
+      <input class="episodes__input" type="text" placeholder="Enter name" />
+      <button class="episodes__search-button">
+        <svg width="18" height="18" class="icon">
+          <use xlink:href="/rick-and-morty-team-project/assets/sprite-episodes-12956b5f.svg#search"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="episodes__filters">
+      <label class="episodes__label">Episode code</label>
+      <input class="episodes__filters-input" placeholder="All seasons" type="text">
+      <button class="episodes__filters-button">
+        <svg width="18" height="18" class="icon">
+          <use xlink:href="/rick-and-morty-team-project/assets/sprite-episodes-12956b5f.svg#chevron-down"></use>
+        </svg>
+      </button>
+    </div>
     <ul class="episodes__params-list is-hidden">
-        <li><button>All seasons</button></li>
-        <li><button>1 season</button></li>
-        <li><button>2 season</button></li>
-        <li><button>3 season</button></li>
-        <li><button>4 season</button></li>
-        <li><button>6 season</button></li>
-        <li><button>7 season</button></li>
-        <li><button>8 season</button></li>
+      <li><button>All seasons</button></li>
+      <li><button>1 season</button></li>
+      <li><button>2 season</button></li>
+      <li><button>3 season</button></li>
+      <li><button>4 season</button></li>
+      <li><button>6 season</button></li>
+      <li><button>7 season</button></li>
+      <li><button>8 season</button></li>
     </ul>
     <ul class="episodes__list"></ul>
-    <button>Load more</button>
+    <button class="episodes__load-button">Load more</button>
   </div>
 </div>
-
-
-		<div class="container">
+		</main>
+		<footer>
+			<div class="container">
 		<div class="footer__container">
 			<div class="footer__logo">
 				<img
@@ -169,6 +185,7 @@
 
 		<p class="footer__agreement">Privacy Policy Public Offering Agreement</p>
 	</div>
+		</footer>
 		
 	</body>
 </html>
