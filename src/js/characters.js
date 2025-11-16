@@ -207,3 +207,127 @@ async function init() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filtersForm = document.getElementById('characters-filters');
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    /**
+     * Инициализирует функциональность кастомных дропдаунов.
+     * Синхронизирует выбор в кастомном дропдауне с нативным <select>.
+     */
+    function initializeDropdowns() {
+        dropdowns.forEach(dropdown => {
+            const selectName = dropdown.getAttribute('data-select');
+            const nativeSelect = document.querySelector(`select[name="${selectName}"]`);
+            const trigger = dropdown.querySelector('.dropdown__trigger');
+            const valueSpan = dropdown.querySelector('.dropdown__value');
+            const menu = dropdown.querySelector('.dropdown__menu');
+            const items = dropdown.querySelectorAll('.dropdown__item');
+
+            if (!nativeSelect || !trigger || !menu) return; // Проверка на наличие необходимых элементов
+
+            // Переключение меню
+            trigger.addEventListener('click', () => {
+                dropdown.classList.toggle('dropdown--active');
+            });
+
+            // Обработка выбора элемента
+            items.forEach(item => {
+                item.addEventListener('click', (event) => {
+                    const newValue = event.currentTarget.getAttribute('data-value');
+                    const newText = event.currentTarget.textContent.trim();
+
+                    // 1. Обновление нативного <select>
+                    nativeSelect.value = newValue;
+
+                    // 2. Обновление отображаемого значения
+                    valueSpan.textContent = newText;
+
+                    // 3. Обновление активного элемента в кастомном списке
+                    items.forEach(i => i.classList.remove('dropdown__item--selected'));
+                    event.currentTarget.classList.add('dropdown__item--selected');
+
+                    // 4. Закрытие дропдауна
+                    dropdown.classList.remove('dropdown--active');
+
+                    // 5. Опционально: автоматический вызов функции фильтрации после выбора
+                    // В зависимости от вашей логики, вы можете автоматически отправлять форму
+                    // или вызывать функцию applyFilters() здесь.
+                    // applyFilters();
+                });
+            });
+
+            // Закрытие дропдауна при клике вне его
+            document.addEventListener('click', (event) => {
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove('dropdown--active');
+                }
+            });
+        });
+    }
+
+    /**
+     * Собирает все параметры фильтрации из формы.
+     * @returns {Object} Объект с параметрами фильтра.
+     */
+    function getFilterParams() {
+        const formData = new FormData(filtersForm);
+        const params = {};
+
+        // Получаем значения из нативных (скрытых) элементов <select> и input[type="search"]
+        for (const [key, value] of formData.entries()) {
+            if (value && value.trim() !== '' && value.trim().toLowerCase() !== 'all') {
+                params[key] = value.trim();
+            }
+        }
+        
+        // Дополнительная обработка для полей, где 'all' или пустая строка не должны быть параметрами
+        // (Это уже учтено в цикле выше, если вы используете 'all' только для gender)
+        if (params.gender && params.gender.toLowerCase() === 'all') {
+            delete params.gender;
+        }
+
+        return params;
+    }
+
+    /**
+     * Основная функция для применения фильтров (замените на свою логику).
+     * @param {Object} filters - Объект с параметрами фильтра.
+     */
+    function applyFilters(filters) {
+        console.log('Применение фильтров с параметрами:', filters);
+        
+        // --- ЗАМЕНИТЕ ЭТО СВОЕЙ ЛОГИКОЙ ---
+        // Например: 
+        // 1. Отправка AJAX-запроса к API:
+        //    fetch(`/api/characters?${new URLSearchParams(filters)}`)
+        //        .then(response => response.json())
+        //        .then(data => updateCharacterList(data)); 
+        // 2. Или фильтрация элементов на стороне клиента (если их немного).
+        // --- -------------------------- ---
+
+        // Здесь должен быть ваш код для получения и отображения отфильтрованных данных.
+        
+        // Пример для отображения в консоли
+        const queryString = new URLSearchParams(filters).toString();
+        console.log(`Полный Query String для API: ?${queryString}`);
+    }
+
+    /**
+     * Обработка отправки формы.
+     */
+    filtersForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Предотвращаем стандартную отправку формы
+        
+        const filters = getFilterParams();
+        applyFilters(filters);
+    });
+
+    // Инициализация функционала
+    initializeDropdowns();
+    
+    // Опционально: Вызов applyFilters() при загрузке страницы с начальными значениями
+    // applyFilters(getFilterParams());
+});
