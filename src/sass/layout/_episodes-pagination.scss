@@ -1,3 +1,107 @@
+.episodes {
+	width: 375px;
+	margin-bottom: 80px;
+
+	.container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__search {
+		width: 335px;
+		height: 68px;
+		position: relative;
+		margin-bottom: 20px;
+	}
+
+	&__label {
+		font-family: var(--font-family);
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 117%;
+		color: #111;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+	}
+
+	&__input {
+		border: 1.5px solid #111;
+		border-radius: 100px;
+		padding: 14px 24px;
+		width: 335px;
+		height: 46px;
+		background: var(--light-green);
+		position: absolute;
+		top: 22px;
+		left: 0px;
+	}
+
+	&__input::placeholder {
+		font-family: var(--font-family);
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 129%;
+		color: #111;
+	}
+
+	&__search-button {
+		position: absolute;
+		top: 36px;
+		left: 293px;
+		background: none;
+		background-color: transparent;
+	}
+
+	&__filters {
+		width: 335px;
+		height: 70px;
+		position: relative;
+		margin-bottom: 40px;
+	}
+
+	&__filters-input {
+		border: 1.5px solid #111;
+		border-radius: 100px;
+		padding: 15px 24px;
+		width: 335px;
+		height: 48px;
+		position: absolute;
+		top: 22px;
+		left: 0px;
+	}
+
+	&__filters-input::placeholder {
+		font-family: var(--font-family);
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 112%;
+		color: #111;
+	}
+
+	&__filters-button {
+		position: absolute;
+		top: 37px;
+		left: 293px;
+	}
+
+	&__list {
+		width: 335px;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 40px;
+	}
+
+	&__load-button {
+		width: 107px;
+		height: 36px;
+		border-radius: 1000px;
+		padding: 10px 20px;
+		margin: 0 auto;
+		background: var(--green);
+	}
+}
+
 .episodes__list-item {
 	width: 335px;
 	height: 250px;
@@ -8,15 +112,15 @@
 	.episodes__name {
 		font-family: var(--font-family);
 		font-weight: 600;
-        position: absolute;
-        top: 20px;
-        left: 20px;
+		position: absolute;
+		top: 20px;
+		left: 20px;
 		font-size: 16px;
 		line-height: 112%;
 		color: var(--green);
 	}
 
-	.episodes__season--title+.episodes__airdate--title {
+	.episodes__season + .episodes__airdate {
 		font-family: var(--font-family);
 		font-weight: 400;
 		font-size: 12px;
@@ -24,31 +128,31 @@
 		color: rgba(250, 250, 250, 0.5);
 	}
 
-    .episodes__season--title {
-        top: 194px;
-        left: 20px;
-    }
-
-    .episodes__airdate--title {
-        top: 194px;
-        left: 81px;
-    }
-
-	.episodes__season+.episodes__airdate {
-        font-family: var(--font-family);
-font-weight: 400;
-font-size: 14px;
-line-height: 129%;
-color: #fafafa;
-	}
-
-    .episodes__season {
-        top: 212px;
-        left: 20px;
+	.episodes__season {
+		top: 194px;
+		left: 20px;
 	}
 
 	.episodes__airdate {
-        top: 212px;
-        left: 81px;
+		top: 194px;
+		left: 81px;
+	}
+
+	.episodes__season + .episodes__airdate {
+		font-family: var(--font-family);
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 129%;
+		color: #fafafa;
+	}
+
+	.episodes__season {
+		top: 212px;
+		left: 20px;
+	}
+
+	.episodes__airdate {
+		top: 212px;
+		left: 81px;
 	}
 }
