@@ -85,6 +85,18 @@
 		left: 293px;
 	}
 
+	&__dropdown {
+		width: 335px;
+		height: 215px;
+		border-radius: 16px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.15);
+		background: #fafafa;
+		overflow-y: scroll;
+	}
+
 	&__list {
 		width: 335px;
 		display: flex;
