@@ -21,8 +21,8 @@
 			rel="stylesheet"
 		/>
 		
-		<script type="module" crossorigin src="/rick-and-morty-team-project/assets/main-299dfb64.js"></script>
-		<link rel="stylesheet" href="/rick-and-morty-team-project/assets/main-8859a910.css">
+		<script type="module" crossorigin src="/rick-and-morty-team-project/assets/main-d6b43eba.js"></script>
+		<link rel="stylesheet" href="/rick-and-morty-team-project/assets/main-e1f53faa.css">
 	</head>
 
 	<body>
@@ -118,7 +118,132 @@
     </ul>
     <ul class="episodes__list"></ul>
     <button class="episodes__load-button">Load more</button>
+
+    <!-- MODAL -->
+    <div class="episodes__modal-backdrop is-hidden">
+      <div class="episodes__modal">
+        <button class="episodes__modal-close" type="button">
+          <svg width="16" height="16" class="icon">
+            <use xlink:href="/rick-and-morty-team-project/assets/sprite-episodes-12956b5f.svg#close"></use>
+          </svg>
+        </button>
+
+        <div class="episodes__modal-image-wrapper">
+          <img class="episodes__modal-image" src="" alt="Character image" />
+        </div>
+
+        <div class="episodes__modal-inner">
+          <h2 class="episodes__modal-title">Jerry Smith</h2>
+
+          <div class="episodes__modal-info">
+            <dl class="episodes__modal-info-list">
+              <div class="episodes__modal-info-row">
+                <dt class="episodes__modal-info-label">Status</dt>
+                <dd class="episodes__modal-info-value">Alive</dd>
+              </div>
+              <div class="episodes__modal-info-row">
+                <dt class="episodes__modal-info-label">Species</dt>
+                <dd class="episodes__modal-info-value">Human</dd>
+              </div>
+              <div class="episodes__modal-info-row">
+                <dt class="episodes__modal-info-label">Gender</dt>
+                <dd class="episodes__modal-info-value">Male</dd>
+              </div>
+              <div class="episodes__modal-info-row">
+                <dt class="episodes__modal-info-label">Origin</dt>
+                <dd class="episodes__modal-info-value">Earth</dd>
+              </div>
+              <div class="episodes__modal-info-row">
+                <dt class="episodes__modal-info-label">Location</dt>
+                <dd class="episodes__modal-info-value">Jerryboree</dd>
+              </div>
+              <div class="episodes__modal-info-row">
+                <dt class="episodes__modal-info-label">Episodes</dt>
+                <dd class="episodes__modal-info-value">1, 2, 3, 4</dd>
+              </div>
+              <div class="episodes__modal-info-row">
+                <dt class="episodes__modal-info-label">Type</dt>
+                <dd class="episodes__modal-info-value">Human</dd>
+              </div>
+            </dl>
+          </div>
+
+          <section class="episodes__modal-episodes">
+            <h3 class="episodes__modal-subtitle">Episodes</h3>
+
+            <ul class="episodes__modal-episodes-list">
+              <li class="episodes__modal-episodes-item">
+                <button class="episodes__modal-episode-card" type="button">
+                  <span class="episodes__modal-episode-name">Pilot</span>
+                  <span class="episodes__modal-episode-meta">
+                    <span class="episodes__modal-episode-season">Season 1</span>
+                    <span class="episodes__modal-episode-air-date">
+                      December 2, 2013
+                    </span>
+                  </span>
+                </button>
+              </li>
+
+              <li class="episodes__modal-episodes-item">
+                <button class="episodes__modal-episode-card" type="button">
+                  <span class="episodes__modal-episode-name">Lawnmower Dog</span>
+                  <span class="episodes__modal-episode-meta">
+                    <span class="episodes__modal-episode-season">Season 1</span>
+                    <span class="episodes__modal-episode-air-date">
+                      December 9, 2013
+                    </span>
+                  </span>
+                </button>
+              </li>
+
+              <li class="episodes__modal-episodes-item">
+                <button class="episodes__modal-episode-card" type="button">
+                  <span class="episodes__modal-episode-name">
+                    Anatomy Park
+                  </span>
+                  <span class="episodes__modal-episode-meta">
+                    <span class="episodes__modal-episode-season">Season 1</span>
+                    <span class="episodes__modal-episode-air-date">
+                      December 16, 2013
+                    </span>
+                  </span>
+                </button>
+              </li>
+
+              <li class="episodes__modal-episodes-item">
+                <button class="episodes__modal-episode-card" type="button">
+                  <span class="episodes__modal-episode-name">
+                    M. Night Shaym-Aliens!
+                  </span>
+                  <span class="episodes__modal-episode-meta">
+                    <span class="episodes__modal-episode-season">Season 1</span>
+                    <span class="episodes__modal-episode-air-date">
+                      January 13, 2014
+                    </span>
+                  </span>
+                </button>
+              </li>
+
+              <li class="episodes__modal-episodes-item">
+                <button class="episodes__modal-episode-card" type="button">
+                  <span class="episodes__modal-episode-name">
+                    Meeseeks and Destroy
+                  </span>
+                  <span class="episodes__modal-episode-meta">
+                    <span class="episodes__modal-episode-season">Season 1</span>
+                    <span class="episodes__modal-episode-air-date">
+                      January 20, 2014
+                    </span>
+                  </span>
+                </button>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 </div>
 		</main>
 		<footer>
