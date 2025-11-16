@@ -2,7 +2,15 @@
 @use"../utils/mixins";
 // @use"../utils/breakpoints";
 
+.container {
+    width: 100%;
+}
+
 .characters {
+    position: relative;
+        z-index: 5;
+        overflow: visible;
+
     &__filters {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -14,10 +22,13 @@
         max-width: 375px;
         row-gap: 20px;
         // column-gap: 24px;
-
+        overflow: visible;
     }
 
-    // &__list {}
+    &__list {
+        position: relative;
+            z-index: 1;
+    }
 
     &__load-more-wrapper {
         display: flex;
@@ -41,11 +52,12 @@
 // ====== БЛОК FILTERS (форма з фільтрами) ======
 
 .filters {
+    overflow: visible;
 
-    // display: flex;
     &__group {
         width: 162px;
         height: 68px;
+        overflow: visible;
 
         &--name {
             grid-area: name;
@@ -131,6 +143,7 @@
 // ====== БЛОК DROPDOWN (кастомні селекти) ======
 
 .dropdown {
+    position: relative;
     margin-top: 8px;
 
     &__trigger {
@@ -166,8 +179,13 @@
         background: #fafafa;
         padding-top: 14px;
         padding-bottom: 10px;
-        position: relative;
-        z-index: 10;
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 0;
+        right: 0;
+
+        /* високий шар */
+        z-index: 10000; // вище карток, тіней, тощо
     }
 
     &__item {
@@ -179,7 +197,9 @@
         margin-bottom: 4px;
         margin-left: 24px;
 
-        // &--selected {}
+        &--selected {
+            color: #111;
+        }
     }
 
     &--open {
@@ -220,7 +240,10 @@
         font-weight: 600;
         font-size: 16px;
         line-height: 112%;
+        margin-top: 14px;
+        margin-bottom: 8px;
         color: #111;
+        
     }
 
     &__origin {
@@ -229,24 +252,28 @@
         font-weight: 400;
         font-size: 14px;
         line-height: 129%;
-        color: rgba(17, 17, 17, 0.5);
+        margin-bottom: 4px;
+        color: #111;
+        
 
-        &--cl {
-            color: #111;
+       
+    &--cl {
+            color: rgba(17, 17, 17, 0.5);
+    } 
+    
+    
         }
-
-    }
 
     &__location {
         font-family: var(--font-family);
         font-weight: 400;
         font-size: 14px;
         line-height: 129%;
-        color: rgba(17, 17, 17, 0.5);
-
-
+        color: #111;
+        
         &--cl {
-            color: #111;
+            color: rgba(17, 17, 17, 0.5);
         }
     }
+    
 }
