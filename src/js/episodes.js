@@ -1,12 +1,10 @@
 import Handlebars from 'handlebars'
-import episodes from '../templates/episodes.hbs'
+import episodes from '../templates/episodes.hbs?raw'
 
 const newsTemplate = Handlebars.compile(episodes)
 
 const list = document.querySelector('.episodes__list')
-// const background = document.querySelector('.episodes__list-item')
 
-// background.style.backgroundImage = `url(${new URL('../images/background-1x.jpg', import.meta.url).href})`
 
 const baseUrl = 'https://rickandmortyapi.com/api/'
 const endPoint = 'episode/?'
@@ -17,7 +15,7 @@ async function fetchEpisodes() {
 		const url = `${baseUrl}${endPoint}${pagination}`
 		const response = await fetch(url)
 		const data = await response.json()
-		const articles = Array.isArray(data.data) ? data.data : []
+        const articles = Array.isArray(data.results) ? data.results : []
 
 		const dataArray = articles.map(article => ({
 			name: article.name,
@@ -37,7 +35,7 @@ async function fetchEpisodes() {
 function renderList(data) {
 	data.forEach(item => {
 		const markup = newsTemplate(item)
-		list.insertAdjacentHTML('beforeend', markup)
+        list.insertAdjacentHTML('beforeend', markup);
 	})
 }
 
