@@ -35,7 +35,12 @@ async function fetchEpisodes() {
 function renderList(data) {
 	data.forEach(item => {
 		const markup = newsTemplate(item)
-        list.insertAdjacentHTML('beforeend', markup);
+        list.insertAdjacentHTML('beforeend', markup)
+        const backgrounds = document.querySelectorAll('.episodes__list-item');
+
+        backgrounds.forEach(bg => {
+            bg.style.backgroundImage = `url(${new URL('../images/background-1x.png', import.meta.url).href})`;
+        });
 	})
 }
 
