@@ -3,15 +3,15 @@
     margin: 0 auto;
     padding: 0 20px;
 
-    @media screen and (min-width: getBreakpoint(sm)) {
+    @include media('sm') {
         width: 335px;
-    }
+    } 
 
-    @media screen and (min-width: getBreakpoint(md)) {
+    @include media('sm') {
         width: 704px;
     }
 
-    @media screen and (min-width: getBreakpoint(lg)) {
+    @include media('sm') {
         width: 1184px;
     }
 }
