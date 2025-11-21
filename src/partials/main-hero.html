@@ -1,7 +1,60 @@
 <section class="main-hero">
   <div class="container main-hero-div">
-    <img src="./images/hero-main-m-2x.png" alt="main-hero" class="main-hero-img">
-    <img src="./images/logo-sm-3x.png" alt="logo-sm" class="hero-logo">
+    <picture class="main-hero-img">
+      <source 
+        media="(min-width: 768px)"
+        srcset="
+          ./images/hero-main-t-1x.png 1x,
+          ./images/hero-main-t-2x.png 2x,
+          ./images/hero-main-t-3x.png 3x
+        ">
+      <!-- SM (≥375px) -->
+      <source 
+        media="(min-width: 375px)"
+        srcset="
+          ./images/hero-main-m-1x.png 1x,
+          ./images/hero-main-m-2x.png 2x,
+          ./images/hero-main-m-3x.png 3x
+        ">
+      <!-- fallback (для очень маленьких экранов) -->
+      <img src="./images/hero-main-m.png"
+        srcset="
+          images/hero-sm@1x.jpg 1x,
+          images/hero-sm@2x.jpg 2x,
+          images/hero-sm@3x.jpg 3x
+        "
+        alt="Hero"
+      >
+    </picture>
+
+    <picture class="hero-logo">
+  <source 
+    media="(min-width: 768px)"
+    srcset="
+      ./images/logo-main-hero-t-1x.png 1x,
+      ./images/logo-main-hero-t-2x.png 2x,
+      ./images/logo-main-hero-t-3x.png 3x
+    "
+  >
+
+  <source 
+    media="(min-width: 375px)"
+    srcset="
+      ./images/logo-main-hero-t-1x.png 1x,
+      ./images/logo-main-hero-t-2x.png 2x,
+      ./images/logo-main-hero-t-3x.png 3x
+    "
+  >
+
+  <img src="./images/logo-main-hero-m-1x.png"
+    srcset="
+      images/hero-sm@1x.jpg 1x,
+      images/hero-sm@2x.jpg 2x,
+      images/hero-sm@3x.jpg 3x
+    "
+    alt="Hero"
+  >
+</picture>
     <img src="./images/main-hero-gradient.png" alt="gradient" class="gradient">
     <h1 class="main-hero-div-text">If you're a fan of Rick and Morty, you don't want to miss out on our app!  Start exploring the endless possibilities of Rick and Morty!</h1>
   </div>
