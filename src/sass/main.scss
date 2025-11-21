@@ -2,6 +2,7 @@
 @import './utils/breakpoints';
 @import './utils/mixins';
 @import './utils/variables';
+@import './layout/hero-main';
 @import './base/base';
 @import './components/container';
 @import './layout/characters-hero';
@@ -10,6 +11,5 @@
 @import './layout/episodes-hero';
 @import './layout/promo';
 @import './layout/main-characters';
-@import './layout/hero-main';
 @import './layout/header';
 @import './layout/footer';

@@ -1,6 +1,6 @@
 .main-hero {
     background-color: #0D171D;
-    bottom: 0;
+    padding-top: 80px;
     padding-bottom: 148px;
     margin-bottom: 150px;
     border-radius: 0 0 60px 60px;
@@ -43,7 +43,7 @@
 
     .buttons-hero-div {
         position: absolute;
-        bottom: -75px;
+        bottom: -65px;
         height: 147px;
         overflow: hidden;
         width: 100%;
@@ -217,4 +217,43 @@
         transform: rotate(180deg);
     }
 
+}
+
+@media screen and (min-width: 768px) {
+    .main-hero{
+        padding-top: 30px;
+        padding-bottom: 64px;
+
+        &-img{
+            margin-bottom: 176px;
+        }
+
+        .hero-logo{
+            width: 462px;
+            height: 184px;
+            position: absolute;
+            top: 380px;
+        }
+
+        .gradient{
+          width: 526px;
+          height: 476px;
+        }
+        .buttons-hero-list {
+        position: relative;
+        width: 1408px;
+        height: 147px;
+        animation: marquee 10s linear infinite alternate;
+
+        
+    }
+    .main-hero-div-text{
+        width: 380px;
+    }
+    @keyframes marquee {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-34%); }
+    }
+    }
+    
 }
