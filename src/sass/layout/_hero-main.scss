@@ -1,6 +1,6 @@
 .main-hero {
     background-color: #0D171D;
-    padding-top: 80px;
+    bottom: 0;
     padding-bottom: 148px;
     margin-bottom: 150px;
     border-radius: 0 0 60px 60px;
@@ -22,109 +22,199 @@
             color: #fafafa;
         }
     }
-    &-img{
+
+    &-img {
         margin-bottom: 28px;
     }
-    .gradient{
+
+    .gradient {
         width: 335px;
         height: 324px;
         position: absolute;
-        top: 4px;
+        bottom: 0;
         z-index: -1;
     }
-    .hero-logo{
+
+    .hero-logo {
         width: 323px;
         height: 128px;
         margin-bottom: 4px;
     }
-    // .buttons-hero-div{
-    //     position: absolute;
-    //     width: 320px;
-    // }
-    // .buttons-hero-list{
-    //     // display: flex;
-    //     width: 320px;
 
-    //     .black{
-    //         background-color: black;
-    //         color: #fafafa;
-    //     }
-    //     .green{
-    //         background-color: #A1D737;
-    //     }
-    //     .lime{
-    //         background-color: #DAF836;
-    //     }
-    //     .gren{
-    //         color: #A1D737;
-    //     }
-    //     .grn{
-    //         color: #DAF836;
-    //     }
-    // }
-    // .buttons-hero{
-    //     color: #111111;
-    //     padding: 14px 24px;
-    //     font-weight: 600;
-    //     font-size: 16px;
-    //     line-height: 112%;
-    //     border-radius: 25px;
-    // }
-    .buttons-hero-div{
+    .buttons-hero-div {
         position: absolute;
-        top: 681px;
-        max-width: 375px;
-        overflow-x: hidden;
+        bottom: -75px;
+        height: 147px;
+        overflow: hidden;
+        width: 100%;
     }
+
     .buttons-hero-list {
-    position: relative;
-    width: 375px;
-    height: 115px;
-    margin: 0 auto;
-    list-style: none;
-    padding: 0;
-    display: flex;
-}
+        position: relative;
+        width: 1408px;
+        height: 147px;
+        animation: marquee 10s linear infinite alternate;
+    }
 
-.btn {
-    position: absolute;
-    height: 50px;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 112%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100px;
-}
+    @keyframes marquee {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-60%); }
+    }
 
-/* ----- Размеры кнопок ----- */
-// #btn1  { width: 218px; }
-// #btn2  { width: 154px; }
-// #btn3  { width: 126px; }
-// #btn4  { width: 208px; }
-#btn5  { width: 151px; }
-#btn6  { width: 113px; }
-#btn7  { width: 124px; }
-#btn8  { width: 168px; }
-#btn9  { width: 102px; }
-// #btn10 { width: 124px; }
-// #btn11 { width: 162px; }
-// #btn12 { width: 112px; }
+    .btn {
+        position: absolute;
+        height: 50px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 112%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100px;
+    }
 
-/* ----- Позиции и углы ----- */
+    // /* ----- Размеры кнопок ----- */
+    #btn1 {
+        width: 218px;
+    }
 
-// #btn1  { left: -563px;   top: 65px; transform: rotate(0deg); }
-// #btn2  { left: 72px;   top: 796px; transform: rotate(0deg); }
-// #btn3  { left: 165px;  top: 772px; transform: rotate(31.18deg); }
-// #btn4  { left: 270px;  top: 847px; transform: rotate(0deg); }
-#btn5  { left: -95px;  top: 30px; transform: rotate(17deg); background-color: #0D171D; color: #A1D737; }
-#btn6  { left: 46px;  top: 29px; transform: rotate(132deg); background-color: #DAF836; color: #111111; }
-#btn7  { left: 123px;  top: 65px; transform: rotate(180deg); background-color: #A1D737; color: #111111; }
-#btn8  { right: -52px;  top: 65px; transform: rotate(0deg); background-color: #0D171D; color: #FAFAFA; }
-#btn9  { right: -35px;  top: 26px; transform: rotate(34.53deg); background-color: #DAF836; color: #111111; }
-// #btn10 { left: 1065px; top: 847px; transform: rotate(180deg); }
-// #btn11 { left: 1205px; top: 824px; transform: rotate(148.92deg); }
-// #btn12 { left: 1312px; top: 847px; transform: rotate(180deg); }
+    #btn2 {
+        width: 154px;
+    }
+
+    #btn3 {
+        width: 98px;
+    }
+
+    #btn4 {
+        width: 158px;
+    }
+
+    #btn5 {
+        width: 151px;
+    }
+
+    #btn6 {
+        width: 113px;
+    }
+
+    #btn7 {
+        width: 124px;
+    }
+
+    #btn8 {
+        width: 168px;
+    }
+
+    #btn9 {
+        width: 102px;
+    }
+
+    #btn10 {
+        width: 124px;
+    }
+
+    #btn11 {
+        width: 162px;
+    }
+
+    #btn12 {
+        width: 112px;
+    }
+
+    /* ----- Позиции и углы ----- */
+
+    #btn1 {
+        left: 0;
+        bottom: 0;
+        background-color: #0D171D;
+        color: #fafafa;
+        transform: rotate(0deg);
+    }
+
+    #btn2 {
+        left: 65px;
+        bottom: 52px;
+        background-color: #A1D737;
+        transform: rotate(0deg);
+    }
+
+    #btn3 {
+        left: 163px;
+        bottom: 80px;
+        background-color: #DAF836;
+        transform: rotate(31.18deg);
+    }
+
+    #btn4 {
+        left: 265px;
+        bottom: 0;
+        background-color: #A1D737;
+        transform: rotate(0deg);
+    }
+
+    #btn5 {
+        left: 364px;
+        bottom: 24px;
+        transform: rotate(17deg);
+        background-color: #0D171D;
+        color: #A1D737;
+    }
+
+    #btn6 {
+        left: 530px;
+        bottom: 35px;
+        transform: rotate(132deg);
+        background-color: #DAF836;
+        color: #111111;
+    }
+
+    #btn7 {
+        left: 580px;
+        bottom: 0;
+        transform: rotate(180deg);
+        background-color: #A1D737;
+        color: #111111;
+    }
+
+    #btn8 {
+        left: 710px;
+        bottom: 0;
+        transform: rotate(0deg);
+        background-color: #0D171D;
+        color: #FAFAFA;
+    }
+
+    #btn9 {
+        left: 786px;
+        bottom: 30px;
+        transform: rotate(34.53deg);
+        background-color: #DAF836;
+        color: #111111;
+    }
+
+    #btn10 {
+        left: 900px;
+        bottom: 0;
+        background-color: #0D171D;
+        color: #DAF836;
+        transform: rotate(180deg);
+    }
+
+    #btn11 {
+        left: 1028px;
+        bottom: 30px;
+        background-color: #DAF836;
+        color: #111111;
+        transform: rotate(148.92deg);
+    }
+
+    #btn12 {
+        left: 1126px;
+        bottom: 0;
+        background-color: #A1D737;
+        color: #111111;
+        transform: rotate(180deg);
+    }
 
 }
