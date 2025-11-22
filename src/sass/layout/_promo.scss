@@ -1,65 +1,90 @@
-.container{
-
-	margin: 0 auto;
-}
-.rnm-promo{
-	  overflow: visible;
+.rnm-promo {
+  overflow: visible;
   position: relative;
-
-	border-radius: 50px;
-	// width: 375px;
-	height: 566px;
-	background: #0D171D;
-	padding: 80px 0 0 20px;
-	&__slider{
-		overflow: visible;
-		display: block;
-		&--track{
-		overflow: visible;
-		display: flex;
-		margin: 64px 0 32px 0;
-		}
+  border-radius: 50px;
+  height: 566px;
+  background: #0D171D;
+  padding: 80px 20px 24px;
+	&__title{ 
+		font-family: "Montserrat", sans-serif; 
+		font-weight: 600; 
+		font-size: 28px; 
+		line-height: 114%; 
+		color: #fafafa; 
+		width: 306px; 
+			&-highlight{ 
+				border-radius: 44px; 
+				width: 119px; 
+				height: 32px; 
+				background: #A1D737; 
+		} 
 	}
-	&__title{
-		font-family: "Montserrat", sans-serif;
-		font-weight: 600;
-		font-size: 28px;
-		line-height: 114%;
-		color: #fafafa;
+  &__slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 320px;      // мобільне «вікно»
+    margin: 32px auto 0;
 
-		width: 306px;
-		&-highlight{
-			
-			border-radius: 44px;
-			width: 119px;
-			height: 32px;
+    &--track {
+      display: flex;
+      transition: transform 0.4s ease;
+    }
+  }
 
-			background: #A1D737;
-		}
-	}
-	&__button{
-		font-family: "Montserrat", sans-serif;
-		font-weight: 600;
-		font-size: 14px;
-		line-height: 129%;
-
-		border-radius: 100px;
-		padding: 10px 20px;
-		width: 96px;
-		height: 36px;
-		background: #A1D737;
-		
-		float: right;
-		right: 0;
-		margin-right: 20px;
-	}
+  &__button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 129%;
+    border-radius: 999px;
+    padding: 10px 20px;
+    min-width: 110px;
+    height: 36px;
+    background: var(--green);
+    color: var(--black);
+    border: none;
+    cursor: pointer;
+    margin-top: 16px;
+    margin-left: auto;
+    display: block;
+  }
 }
-.rnm-slider{
-	&__image{
-  width: 220px;
-  // height: 260px;
-	}
-}
-img{
 
+.rnm-slider {
+  &__slide {
+    flex: 0 0 220px;          // 🔥 фіксована ширина картки
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;       // відстань між слайдами
+  }
+
+  &__image {
+    width: 220px;
+    height: 260px;
+    display: block;
+    border-radius: 16px;
+  }
+}
+
+/* tablet / desktop — 3 повних слайди в ряд */
+@include media("md") {
+  .rnm-promo__slider {
+    max-width: 900px;
+  }
+
+  .rnm-slider__slide {
+    flex: 0 0 calc(33.333% - 10px);
+    margin-right: 10px;
+  }
+
+  .rnm-slider__image {
+    width: 200px;
+    height: 220px;
+  }
+	.rnm-promo__title{
+		width: 606px; 
+
+	}
 }
