@@ -1,24 +1,36 @@
 .main-characters{
 	&__title{
-		margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
 	}
 	&__title-badge {
   background-color: #0D171D; 
   color: #ffffff;            
   text-align: center;
-	padding: 5px 0;
+
 	border-radius: 44px;
-	width: 100px;
+
 	height: 44px;       
   border-radius: 20px;       
   font-weight: 600;          
-  display: inline-block;     
+  display: inline-block;  
+  
+  padding: 5px 16px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 	}
 	&__title-text {
     color: #111;
   }
 	&__layout {
+    display: flex;
+    flex-direction: column;
     gap: 40px;
+
   }
 
   &__figure {
@@ -33,7 +45,7 @@
     width: 335px;
     height: 335px;
 
-    margin: 0 auto;
+
     margin-bottom: 32px;
   }
 
@@ -82,7 +94,6 @@
       width: 704px;
       height: 704px;
 
-      margin: 0 auto;
       margin-bottom: 32px;
     }
       &__description {
