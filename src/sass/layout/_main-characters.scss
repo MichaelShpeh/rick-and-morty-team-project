@@ -2,11 +2,6 @@
 	&__title{
 		margin-bottom: 40px;
 	}
-	&__image{
-		background-color: tomato;
-		outline:  1px solid tomato;
-		margin-bottom: 32px;
-	}
 	&__title-badge {
   background-color: #0D171D; 
   color: #ffffff;            
@@ -27,12 +22,24 @@
   }
 
   &__figure {
-    flex: 0 0 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--green);
+		margin-bottom: 32px;
+    border-radius: 12px;
+
+    width: 335px;
+    height: 335px;
+
+    margin: 0 auto;
+    margin-bottom: 32px;
   }
 
   &__image {
-    width: 100%;
-    border-radius: 12px;
+    width: 205px;
+    height: 308px;
   }
 
   &__list {
@@ -45,6 +52,8 @@
   &__item {
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(17, 17, 17, 0.2);
+
+    cursor: pointer;
 
     &--active .main-characters__name {
       color: var(--green);
@@ -65,5 +74,30 @@
     line-height: 129%;
     color: #111;
     max-width: 480px;
+  }
+  @include media('md'){
+
+    &__figure {
+
+      width: 704px;
+      height: 704px;
+
+      margin: 0 auto;
+      margin-bottom: 32px;
+    }
+      &__description {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 129%;
+      color: #111;
+      max-width: 704px;
+    }
+    &__name {
+      font-size: 24px;
+      margin-bottom: 25px;
+    }
+    &__layout {
+      margin-bottom: 128px;
+    }
   }
 }
