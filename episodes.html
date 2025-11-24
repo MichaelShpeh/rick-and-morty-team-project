@@ -21,9 +21,9 @@
 			rel="stylesheet"
 		/>
 		
-		<script type="module" crossorigin src="/rick-and-morty-team-project/assets/episodes-8a2ed303.js"></script>
-		<link rel="modulepreload" crossorigin href="/rick-and-morty-team-project/assets/main-2130b2cb.js">
-		<link rel="stylesheet" href="/rick-and-morty-team-project/assets/main-d40ef44e.css">
+		<script type="module" crossorigin src="/rick-and-morty-team-project/assets/episodes-783b38fb.js"></script>
+		<link rel="modulepreload" crossorigin href="/rick-and-morty-team-project/assets/main-54246b69.js">
+		<link rel="stylesheet" href="/rick-and-morty-team-project/assets/main-455b550d.css">
 	</head>
 
 	<body>
@@ -152,6 +152,7 @@
 </section>
 			<div class="episodes">
   <div class="container">
+    <div class="episodes-styles">
     <div class="episodes__search">
       <label class="episodes__label">Name</label>
       <input class="episodes__input" type="text" placeholder="Enter name" />
@@ -163,24 +164,25 @@
     </div>
     <div class="episodes__filters">
       <label class="episodes__label">Episode code</label>
-      <input class="episodes__filters-input" placeholder="All seasons" type="text">
-      <button class="episodes__filters-button">
+      <input class="episodes__filters-input" readonly placeholder="All seasons" type="text">
+      <button class="episodes__filters-button ">
         <svg width="18" height="18" class="icon">
           <use xlink:href="/rick-and-morty-team-project/assets/sprite-episodes-12956b5f.svg#chevron-down"></use>
         </svg>
       </button>
-    </div>
-    <div class="episodes__dropdown is-hidden">
-      <div class="dropdown-item" data-value="all">All seasons</div>
-      <div class="dropdown-item" data-value="1">1 season</div>
-      <div class="dropdown-item" data-value="2">2 season</div>
-      <div class="dropdown-item" data-value="3">3 season</div>
-      <div class="dropdown-item" data-value="4">4 season</div>
-      <div class="dropdown-item" data-value="5">5 season</div>
-      <div class="dropdown-item" data-value="6">6 season</div>
-      <div class="dropdown-item" data-value="7">7 season</div>
-      <div class="dropdown-item" data-value="8">8 season</div>
-    </div>
+    <ul class="episodes__dropdown is-hidden">
+      <li class="episodes__dropdown-item active" data-value="all">All seasons</li>
+      <li class="episodes__dropdown-item" data-value="1">1 season</li>
+      <li class="episodes__dropdown-item" data-value="2">2 season</li>
+      <li class="episodes__dropdown-item" data-value="3">3 season</li>
+      <li class="episodes__dropdown-item" data-value="4">4 season</li>
+      <li class="episodes__dropdown-item" data-value="5">5 season</li>
+      <li class="episodes__dropdown-item" data-value="6">6 season</li>
+      <li class="episodes__dropdown-item" data-value="7">7 season</li>
+      <li class="episodes__dropdown-item" data-value="8">8 season</li>
+    </ul>
+  </div>
+ </div>
     <ul class="episodes__list"></ul>
     <button class="episodes__load-button">Load more</button>
 </div>
