@@ -3,7 +3,10 @@ import episodes from '../templates/episodes.hbs?raw'
 
 const newsTemplate = Handlebars.compile(episodes)
 
-const list = document.querySelector('.episodes__list')
+const list = document.querySelector('.episodes__list');
+const filtInpt = document.querySelector('.episodes__filters-input');
+const filtBut = document.querySelector('.episodes__filters-button');
+const dropdown = document.querySelector('.episodes__dropdown')
 
 
 const baseUrl = 'https://rickandmortyapi.com/api/'
@@ -47,3 +50,9 @@ function renderList(data) {
 document.addEventListener('DOMContentLoaded', function () {
 	fetchEpisodes()
 })
+
+
+filtBut.addEventListener("click", () => {
+	dropdown.classList.toggle('is-hidden');
+	filtBut.classList.toggle('rotated');
+});

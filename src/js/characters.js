@@ -90,7 +90,7 @@ async function loadCharactersPartial() {
     const root = document.getElementById("characters-root");
     const res = await fetch(partialUrl);
     const html = await res.text();
-    root.innerHTML = html;
+    root.innerHTML += html;
 }
 
 // Завантажуємо і компілюємо шаблон картки

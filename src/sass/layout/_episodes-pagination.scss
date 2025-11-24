@@ -1,10 +1,26 @@
 .episodes {
 	width: 375px;
 	margin-bottom: 80px;
+	@include media('md') {
+		width: 768px;
+	}
 
 	.container {
 		display: flex;
 		flex-direction: column;
+	}
+
+	&-styles {
+		@include media('md') {
+			width: 439px;
+			height: 76px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			margin: 0 auto;
+			margin-bottom: 64px;
+		}
 	}
 
 	&__search {
@@ -12,6 +28,12 @@
 		height: 68px;
 		position: relative;
 		margin-bottom: 20px;
+
+		@include media('md') {
+			width: 233px;
+			height: 76px;
+			margin-bottom: 0px;
+		}
 	}
 
 	&__label {
@@ -23,6 +45,11 @@
 		position: absolute;
 		top: 0px;
 		left: 0px;
+
+		@include media('md') {
+			font-size: 14px;
+			line-height: 129%;
+		}
 	}
 
 	&__input {
@@ -35,6 +62,11 @@
 		position: absolute;
 		top: 22px;
 		left: 0px;
+
+		@include media('md') {
+			width: 233px;
+			height: 50px;
+		}
 	}
 
 	&__input::placeholder {
@@ -43,6 +75,10 @@
 		font-size: 14px;
 		line-height: 129%;
 		color: #111;
+		@include media('md') {
+			font-size: 16px;
+			line-height: 112%;
+		}
 	}
 
 	&__search-button {
@@ -51,6 +87,11 @@
 		left: 293px;
 		background: none;
 		background-color: transparent;
+
+		@include media('md') {
+			top: 38px;
+			left: 191px;
+		}
 	}
 
 	&__filters {
@@ -58,6 +99,12 @@
 		height: 70px;
 		position: relative;
 		margin-bottom: 40px;
+
+		@include media('md') {
+			width: 190px;
+			height: 76px;
+			margin-bottom: 0px;
+		}
 	}
 
 	&__filters-input {
@@ -69,6 +116,12 @@
 		position: absolute;
 		top: 22px;
 		left: 0px;
+
+		@include media('md') {
+			padding: 16px 24px;
+			width: 190px;
+			height: 50px;
+		}
 	}
 
 	&__filters-input::placeholder {
@@ -83,36 +136,100 @@
 		position: absolute;
 		top: 37px;
 		left: 293px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: none;
+
+		@include media('md') {
+			top: 39px;
+			left: 148px;
+		}
+	}
+
+	.rotated {
+		transform: rotate(180deg);
 	}
 
 	&__dropdown {
 		width: 335px;
-		height: 215px;
-		border-radius: 16px;
+		max-height: 215px;
+		position: absolute;
+		top: 71px;
+		z-index: 3;
+		border-radius: 0px 0px 16px 16px;
+		padding-top: 16px;
+		padding-left: 24px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
 		box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.15);
 		background: #fafafa;
 		overflow-y: scroll;
+		outline: 1px solid yellowgreen;
 	}
 
 	.is-hidden {
 		display: none;
 	}
 
+	&__dropdown::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	&__dropdown::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	&__dropdown::-webkit-scrollbar-thumb {
+		background: #575757;
+		border-radius: 12px;
+	}
+
+	&__dropdown-item {
+		margin-bottom: 8px;
+	}
+
+	&__dropdown-item:hover {
+		cursor: pointer;
+	}
+
+	.active {
+		font-family: var(--font-family);
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 129%;
+		color: var(--green);
+	}
+
 	&__list {
 		width: 335px;
-		display: flex;
-		flex-direction: column;
+		margin: 0 auto;
 		margin-bottom: 20px;
 
-		@include media('sm') {
+		@include media('md') {
+			width: 704px;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
 			gap: 32px;
-		} 
-		// @media screen and (min-width: 768px) {}
 		}
-	
+	}
+
+	&__list-item {
+		width: 335px;
+		height: 250px;
+		position: relative;
+		border: 2px solid var(--green);
+		border-radius: 18px;
+		margin-bottom: 20px;
+		background: var(--black);
+
+		@include media('md') {
+			width: 336px;
+			margin-bottom: 0px;
+		}
+	}
 
 	&__load-button {
 		width: 107px;
@@ -121,18 +238,13 @@
 		padding: 10px 20px;
 		margin: 0 auto;
 		background: var(--green);
+
+		@include media('md') {
+			width: 126px;
+			height: 42px;
+			padding: 12px 24px;
+		}
 	}
-
-}
-
-.episodes__list-item {
-	width: 335px;
-	height: 250px;
-	position: relative;
-	border: 2px solid var(--green);
-	border-radius: 18px;
-	margin-bottom: 20px;
-	background: var(--black);
 }
 
 .episodes__name {
