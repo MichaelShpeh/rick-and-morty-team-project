@@ -53,9 +53,13 @@
 				width: 97px;
 				height: 42px;
 				transform: rotate(32deg);
-				right: 0;
+				right: -13px;
 				top: 14px;
 				color: var(--f-accent-2-text);
+
+				@include media('md') {
+					right: 0;
+				}
 			}
 		}
 	}
