@@ -166,10 +166,11 @@
         &--type {
 
             /* grid-area: type; */
-            @include media('md') {}
+            @include media('md') {
+                order: 3;
+                    flex-basis: 175px;
+            }
 
-            order: 3;
-            flex-basis: 175px;
 
             @include media('lg') {}
         }
