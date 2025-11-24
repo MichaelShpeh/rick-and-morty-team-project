@@ -7,11 +7,13 @@
         width: 335px;
     } 
 
-    @include media('sm') {
+    @include media('md') {
         width: 704px;
+        padding: 0 32px;
     }
 
-    @include media('sm') {
+    @include media('lg') {
         width: 1184px;
+        padding: 0 128px;
     }
 }

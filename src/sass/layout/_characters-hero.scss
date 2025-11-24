@@ -1,4 +1,4 @@
-.characters-hero{
+.characters-hero {
     padding-top: 41px;
     padding-bottom: 81px;
     margin-bottom: 105px;
@@ -6,11 +6,13 @@
     position: relative;
     border-radius: 0 0 60px 60px;
 }
-.characters-div{
+
+.characters-div {
     position: relative;
     z-index: 5;
 }
-.characters-title{
+
+.characters-title {
     font-weight: 600;
     font-size: 40px;
     line-height: 110%;
@@ -18,7 +20,8 @@
     color: #fafafa;
     margin-bottom: 14px;
 }
-.characters-text{
+
+.characters-text {
     width: 317px;
     font-weight: 400;
     font-size: 14px;
@@ -26,7 +29,8 @@
     color: #fafafa;
     margin-bottom: 24px;
 }
-.characters-link{
+
+.characters-link {
     display: block;
     border: 1px solid rgba(250, 250, 250, 0.3);
     border-radius: 1000px;
@@ -39,189 +43,259 @@
     line-height: 133%;
     color: #fafafa;
 }
-.characters-img{
+
+.characters-img {
     background-color: #A1D737;
     padding-top: 16px;
     border-radius: 25px;
+    display: block;
+    width: 335px;
+    height: 335px;
 }
-.characters-gradient{
+
+.characters-gradient {
     position: absolute;
     top: 320px;
     z-index: 0;
     border-radius: 60px;
 }
+
 .buttons-hero-div {
-        position: absolute;
-        bottom: -75px;
-        height: 147px;
-        overflow: hidden;
-        width: 100%;
+    position: absolute;
+    bottom: -65px;
+    height: 147px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.buttons-hero-list {
+    position: relative;
+    width: 1408px;
+    height: 147px;
+    animation: marquee 10s linear infinite alternate;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
     }
 
-    // .buttons-hero-list {
-    //     position: relative;
-    //     width: 1408px;
-    //     height: 147px;
-    //     animation: marquee 10s linear infinite alternate;
-    // }
+    100% {
+        transform: translateX(-60%);
+    }
+}
 
-    // @keyframes marquee {
-    //     0%   { transform: translateX(0); }
-    //     100% { transform: translateX(-60%); }
-    // }
+.btn {
+    position: absolute;
+    height: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 112%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+}
 
-    .btn {
-        position: absolute;
-        height: 50px;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 112%;
+// /* ----- Размеры кнопок ----- */
+#btn1 {
+    width: 218px;
+}
+
+#btn2 {
+    width: 154px;
+}
+
+#btn3 {
+    width: 98px;
+}
+
+#btn4 {
+    width: 158px;
+}
+
+#btn5 {
+    width: 151px;
+}
+
+#btn6 {
+    width: 113px;
+}
+
+#btn7 {
+    width: 124px;
+}
+
+#btn8 {
+    width: 168px;
+}
+
+#btn9 {
+    width: 102px;
+}
+
+#btn10 {
+    width: 124px;
+}
+
+#btn11 {
+    width: 162px;
+}
+
+#btn12 {
+    width: 112px;
+}
+
+/* ----- Позиции и углы ----- */
+
+#btn1 {
+    left: 0;
+    bottom: 0;
+    background-color: #0D171D;
+    color: #fafafa;
+    transform: rotate(0deg);
+}
+
+#btn2 {
+    left: 65px;
+    bottom: 52px;
+    background-color: #A1D737;
+    transform: rotate(0deg);
+}
+
+#btn3 {
+    left: 163px;
+    bottom: 80px;
+    background-color: #DAF836;
+    transform: rotate(31.18deg);
+}
+
+#btn4 {
+    left: 265px;
+    bottom: 0;
+    background-color: #A1D737;
+    transform: rotate(0deg);
+}
+
+#btn5 {
+    left: 364px;
+    bottom: 24px;
+    transform: rotate(17deg);
+    background-color: #0D171D;
+    color: #A1D737;
+}
+
+#btn6 {
+    left: 530px;
+    bottom: 35px;
+    transform: rotate(132deg);
+    background-color: #DAF836;
+    color: #111111;
+}
+
+#btn7 {
+    left: 580px;
+    bottom: 0;
+    transform: rotate(180deg);
+    background-color: #A1D737;
+    color: #111111;
+}
+
+#btn8 {
+    left: 710px;
+    bottom: 0;
+    transform: rotate(0deg);
+    background-color: #0D171D;
+    color: #FAFAFA;
+}
+
+#btn9 {
+    left: 786px;
+    bottom: 30px;
+    transform: rotate(34.53deg);
+    background-color: #DAF836;
+    color: #111111;
+}
+
+#btn10 {
+    left: 900px;
+    bottom: 0;
+    background-color: #0D171D;
+    color: #DAF836;
+    transform: rotate(180deg);
+}
+
+#btn11 {
+    left: 1028px;
+    bottom: 30px;
+    background-color: #DAF836;
+    color: #111111;
+    transform: rotate(148.92deg);
+}
+
+#btn12 {
+    left: 1126px;
+    bottom: 0;
+    background-color: #A1D737;
+    color: #111111;
+    transform: rotate(180deg);
+}
+
+@media screen and (min-width: 768px) {
+    .characters-div {
         display: flex;
         align-items: center;
-        justify-content: center;
-        border-radius: 100px;
+        gap: 24px;
+        padding-top: 117px;
+        padding-bottom: 208px;
     }
 
-    // /* ----- Размеры кнопок ----- */
-    #btn1 {
-        width: 218px;
+    .characters-title {
+        font-weight: 600;
+        font-size: 60px;
+        line-height: 100%;
+        margin-bottom: 16px;
     }
 
-    #btn2 {
-        width: 154px;
+    .characters-text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 112%;
+        margin-bottom: 32px;
     }
 
-    #btn3 {
-        width: 98px;
+    .characters-link {
+        border-radius: 1000px;
+        padding: 12px 24px;
+        width: 131px;
+        height: 42px;
+
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 129%;
     }
 
-    #btn4 {
-        width: 158px;
-    }
-
-    #btn5 {
-        width: 151px;
-    }
-
-    #btn6 {
-        width: 113px;
-    }
-
-    #btn7 {
-        width: 124px;
-    }
-
-    #btn8 {
-        width: 168px;
-    }
-
-    #btn9 {
-        width: 102px;
-    }
-
-    #btn10 {
-        width: 124px;
-    }
-
-    #btn11 {
-        width: 162px;
-    }
-
-    #btn12 {
-        width: 112px;
-    }
-
-    /* ----- Позиции и углы ----- */
-
-    #btn1 {
-        left: 0;
-        bottom: 0;
-        background-color: #0D171D;
-        color: #fafafa;
-        transform: rotate(0deg);
-    }
-
-    #btn2 {
-        left: 65px;
-        bottom: 52px;
+    .characters-img {
         background-color: #A1D737;
-        transform: rotate(0deg);
+        padding-top: 18px;
+        border-radius: 25px;
+        display: block;
+        width: 346px;
+        height: 346px;
     }
 
-    #btn3 {
-        left: 163px;
-        bottom: 80px;
-        background-color: #DAF836;
-        transform: rotate(31.18deg);
+    .characters-gradient {
+        top: 50px;
+        right: 20px;
     }
-
-    #btn4 {
-        left: 265px;
-        bottom: 0;
-        background-color: #A1D737;
-        transform: rotate(0deg);
+    .buttons-hero-list {
+        position: relative;
+        width: 1408px;
+        height: 147px;
+        animation: marquee 10s linear infinite alternate;
     }
-
-    #btn5 {
-        left: 364px;
-        bottom: 24px;
-        transform: rotate(17deg);
-        background-color: #0D171D;
-        color: #A1D737;
+    @keyframes marquee {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-34%); }
     }
-
-    #btn6 {
-        left: 530px;
-        bottom: 35px;
-        transform: rotate(132deg);
-        background-color: #DAF836;
-        color: #111111;
-    }
-
-    #btn7 {
-        left: 580px;
-        bottom: 0;
-        transform: rotate(180deg);
-        background-color: #A1D737;
-        color: #111111;
-    }
-
-    #btn8 {
-        left: 710px;
-        bottom: 0;
-        transform: rotate(0deg);
-        background-color: #0D171D;
-        color: #FAFAFA;
-    }
-
-    #btn9 {
-        left: 786px;
-        bottom: 30px;
-        transform: rotate(34.53deg);
-        background-color: #DAF836;
-        color: #111111;
-    }
-
-    #btn10 {
-        left: 900px;
-        bottom: 0;
-        background-color: #0D171D;
-        color: #DAF836;
-        transform: rotate(180deg);
-    }
-
-    #btn11 {
-        left: 1028px;
-        bottom: 30px;
-        background-color: #DAF836;
-        color: #111111;
-        transform: rotate(148.92deg);
-    }
-
-    #btn12 {
-        left: 1126px;
-        bottom: 0;
-        background-color: #A1D737;
-        color: #111111;
-        transform: rotate(180deg);
-    }
+}

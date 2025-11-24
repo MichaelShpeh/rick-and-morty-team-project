@@ -10,6 +10,12 @@
     position: relative;
     z-index: 1;
 }
+.episodes-gradient {
+    position: absolute;
+    top: 320px;
+    z-index: 0;
+    border-radius: 60px;
+}
 .episodes-title{
     font-weight: 600;
     font-size: 40px;
@@ -29,4 +35,73 @@
     background-color: #A1D737;
     padding: 32px 39px 0 0;
     border-radius: 25px;
+    display: block;
+    width: 335px;
+    height: 335px;
+    
+    img{
+        border-radius: 25px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .episodes-hero{
+        padding-top: 117px;
+        padding-bottom: 208px;
+    }
+    .episodes-div {
+        display: flex;
+        align-items: center;
+        gap: 53px;
+    }
+
+    .episodes-title {
+        font-weight: 600;
+        font-size: 60px;
+        line-height: 100%;
+        margin-bottom: 16px;
+    }
+
+    .episodes-text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 112%;
+        margin-bottom: 32px;
+        width: 305px;
+    }
+
+    .characters-link {
+        border-radius: 1000px;
+        padding: 12px 24px;
+        width: 131px;
+        height: 42px;
+
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 129%;
+    }
+
+    .episodes-img {
+        background-color: #A1D737;
+        padding: 32px 50px 0 0;
+        border-radius: 25px;
+        display: block;
+        width: 346px;
+        height: 346px;
+    }
+
+    .episodes-gradient {
+        top: 50px;
+        right: 20px;
+    }
+    .buttons-hero-list {
+        position: relative;
+        width: 1408px;
+        height: 147px;
+        animation: marquee 10s linear infinite alternate;
+    }
+    @keyframes marquee {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-34%); }
+    }
 }
