@@ -1,19 +1,49 @@
 <section class="episodes-hero">
     <div class="container episodes-div">
+        <div class="episodes-text-div">
         <h1 class="episodes-title">Episodes</h1>
-        <p class="episodes-text">With a comprehensive guide to every episode, you can relive your favorite moments and
-            discover new ones. From the bizarre and hilarious to the emotional and thought-provoking, our episode guide
-            covers it all. </p>
-        <a class="characters-link" href="./index.html">Back home</a>
-        <img class="episodes-img" src="./images/episodes-hero-m-3x.png" alt="">
+            <p class="episodes-text">With a comprehensive guide to every episode, you can relive your favorite moments and
+                discover new ones. From the bizarre and hilarious to the emotional and thought-provoking, our episode guide
+                covers it all. </p>
+            <a class="characters-link" href="./index.html">Back home</a>
+        </div>
+        <picture class="episodes-img">
+            <source media="(min-width: 768px)" srcset="
+                ./images/episodes-hero-t-3x.png 1x,
+                ./images/episodes-hero-t-3x.png 2x,
+                ./images/episodes-hero-t-3x.png 3x
+            ">
+            <source media="(min-width: 320px)" srcset="
+                ./images/episodes-hero-m-3x.png 1x,
+                ./images/episodes-hero-m-3x.png 2x,
+                ./images/episodes-hero-m-3x.png 3x
+            ">
+            <img src="./images/episodes-hero-m-3x.png" srcset="
+                ./images/episodes-hero-m-1x.png 1x,
+                ./images/episodes-hero-m-2x.png 2x,
+                ./images/episodes-hero-m-3x.png 3x
+            " alt="Hero">
+        </picture>
     </div>
-    <img class="characters-gradient" src="./images/character-hero-gradient.png" alt="gradient">
+    <picture class="episodes-gradient">
+        <source media="(min-width: 768px)" src="./images/characters-gradient-t.png">
+        <source media="(min-width: 320px)" src="./images/characters-gradient-m.png">
+        <img src="./images/characters-gradient-m.png">
+    </picture>
     <div class="buttons-hero-div">
         <ul class="buttons-hero-list">
-            <li class="buttons-hero-item"><div id="btn1" class="btn">the adventures</div></li>
-        <li class="buttons-hero-item"><div id="btn2" class="btn">Animated</div></li>
-        <li class="buttons-hero-item"><div id="btn3" class="btn">Sitcom</div></li>
-        <li class="buttons-hero-item"><div id="btn4" class="btn">Justin Roiland</div></li>
+            <li class="buttons-hero-item">
+                <div id="btn1" class="btn">the adventures</div>
+            </li>
+            <li class="buttons-hero-item">
+                <div id="btn2" class="btn">Animated</div>
+            </li>
+            <li class="buttons-hero-item">
+                <div id="btn3" class="btn">Sitcom</div>
+            </li>
+            <li class="buttons-hero-item">
+                <div id="btn4" class="btn">Justin Roiland</div>
+            </li>
             <li class="buttons-hero-item">
                 <div id="btn5" class="btn">superpower</div>
             </li>
@@ -29,9 +59,15 @@
             <li class="buttons-hero-item">
                 <div id="btn9" class="btn">comics</div>
             </li>
-            <li class="buttons-hero-item"><div id="btn10" class="btn">follows</div></li>
-        <li class="buttons-hero-item"><div id="btn11" class="btn">characters</div></li>
-        <li class="buttons-hero-item"><div id="btn12" class="btn">Whoa</div></li>
+            <li class="buttons-hero-item">
+                <div id="btn10" class="btn">follows</div>
+            </li>
+            <li class="buttons-hero-item">
+                <div id="btn11" class="btn">characters</div>
+            </li>
+            <li class="buttons-hero-item">
+                <div id="btn12" class="btn">Whoa</div>
+            </li>
         </ul>
     </div>
 </section>

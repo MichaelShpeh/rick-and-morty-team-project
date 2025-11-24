@@ -21,9 +21,9 @@
 			rel="stylesheet"
 		/>
 		
-		<script type="module" crossorigin src="/rick-and-morty-team-project/assets/episodes-d7664d4c.js"></script>
-		<link rel="modulepreload" crossorigin href="/rick-and-morty-team-project/assets/main-0dda8474.js">
-		<link rel="stylesheet" href="/rick-and-morty-team-project/assets/main-77f0cccc.css">
+		<script type="module" crossorigin src="/rick-and-morty-team-project/assets/episodes-8a2ed303.js"></script>
+		<link rel="modulepreload" crossorigin href="/rick-and-morty-team-project/assets/main-2130b2cb.js">
+		<link rel="stylesheet" href="/rick-and-morty-team-project/assets/main-d40ef44e.css">
 	</head>
 
 	<body>
@@ -91,20 +91,38 @@
 		<main id="main">
 			<section class="episodes-hero">
     <div class="container episodes-div">
+        <div class="episodes-text-div">
         <h1 class="episodes-title">Episodes</h1>
-        <p class="episodes-text">With a comprehensive guide to every episode, you can relive your favorite moments and
-            discover new ones. From the bizarre and hilarious to the emotional and thought-provoking, our episode guide
-            covers it all. </p>
-        <a class="characters-link" href="./index.html">Back home</a>
-        <img class="episodes-img" src="/rick-and-morty-team-project/assets/episodes-hero-m-3x-5d8a651c.png" alt="">
+            <p class="episodes-text">With a comprehensive guide to every episode, you can relive your favorite moments and
+                discover new ones. From the bizarre and hilarious to the emotional and thought-provoking, our episode guide
+                covers it all. </p>
+            <a class="characters-link" href="./index.html">Back home</a>
+        </div>
+        <picture class="episodes-img">
+            <source media="(min-width: 768px)" srcset="/rick-and-morty-team-project/assets/episodes-hero-t-3x-3cb0d871.png 1x, /rick-and-morty-team-project/assets/episodes-hero-t-3x-3cb0d871.png 2x, /rick-and-morty-team-project/assets/episodes-hero-t-3x-3cb0d871.png 3x">
+            <source media="(min-width: 320px)" srcset="/rick-and-morty-team-project/assets/episodes-hero-m-3x-5d8a651c.png 1x, /rick-and-morty-team-project/assets/episodes-hero-m-3x-5d8a651c.png 2x, /rick-and-morty-team-project/assets/episodes-hero-m-3x-5d8a651c.png 3x">
+            <img src="/rick-and-morty-team-project/assets/episodes-hero-m-3x-5d8a651c.png" srcset="/rick-and-morty-team-project/assets/episodes-hero-m-1x-607c072a.png 1x, /rick-and-morty-team-project/assets/episodes-hero-m-2x-5891300e.png 2x, /rick-and-morty-team-project/assets/episodes-hero-m-3x-5d8a651c.png 3x" alt="Hero">
+        </picture>
     </div>
-    <img class="characters-gradient" src="/rick-and-morty-team-project/assets/character-hero-gradient-e1f17013.png" alt="gradient">
+    <picture class="episodes-gradient">
+        <source media="(min-width: 768px)" src="/rick-and-morty-team-project/assets/characters-gradient-t-682de745.png">
+        <source media="(min-width: 320px)" src="/rick-and-morty-team-project/assets/characters-gradient-m-e1f17013.png">
+        <img src="/rick-and-morty-team-project/assets/characters-gradient-m-e1f17013.png">
+    </picture>
     <div class="buttons-hero-div">
         <ul class="buttons-hero-list">
-            <li class="buttons-hero-item"><div id="btn1" class="btn">the adventures</div></li>
-        <li class="buttons-hero-item"><div id="btn2" class="btn">Animated</div></li>
-        <li class="buttons-hero-item"><div id="btn3" class="btn">Sitcom</div></li>
-        <li class="buttons-hero-item"><div id="btn4" class="btn">Justin Roiland</div></li>
+            <li class="buttons-hero-item">
+                <div id="btn1" class="btn">the adventures</div>
+            </li>
+            <li class="buttons-hero-item">
+                <div id="btn2" class="btn">Animated</div>
+            </li>
+            <li class="buttons-hero-item">
+                <div id="btn3" class="btn">Sitcom</div>
+            </li>
+            <li class="buttons-hero-item">
+                <div id="btn4" class="btn">Justin Roiland</div>
+            </li>
             <li class="buttons-hero-item">
                 <div id="btn5" class="btn">superpower</div>
             </li>
@@ -120,9 +138,15 @@
             <li class="buttons-hero-item">
                 <div id="btn9" class="btn">comics</div>
             </li>
-            <li class="buttons-hero-item"><div id="btn10" class="btn">follows</div></li>
-        <li class="buttons-hero-item"><div id="btn11" class="btn">characters</div></li>
-        <li class="buttons-hero-item"><div id="btn12" class="btn">Whoa</div></li>
+            <li class="buttons-hero-item">
+                <div id="btn10" class="btn">follows</div>
+            </li>
+            <li class="buttons-hero-item">
+                <div id="btn11" class="btn">characters</div>
+            </li>
+            <li class="buttons-hero-item">
+                <div id="btn12" class="btn">Whoa</div>
+            </li>
         </ul>
     </div>
 </section>
