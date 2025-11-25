@@ -10,8 +10,18 @@ const cardTemplateUrl = new URL(
 
 let cardTemplate = null;
 
-// ===== Параметри батча =====
-const BATCH_SIZE = 10;
+/* ========= ДИНАМІЧНИЙ РОЗМІР БАТЧА =========
+   lg:  >= 1440px  -> 20
+   інакше          -> 10
+*/
+const LG_WIDTH = 1440;
+let BATCH = 10; // поточний розмір батча
+
+function updateBatchFromViewport() {
+    BATCH = window.innerWidth >= LG_WIDTH ? 20 : 10;
+}
+updateBatchFromViewport();
+window.addEventListener("resize", updateBatchFromViewport);
 
 // ===== Стан пагінації/буфера =====
 let buffer = [];        // локальний буфер персонажів (чекає на рендер)
@@ -119,8 +129,10 @@ async function fetchAndAppendNextPage() {
 
 // Гарантуємо, що в буфері є щонайменше `min` елементів (або все, що можемо)
 async function ensureBuffer(min) {
-    // Якщо ми вже накачали всі сторінки і буфер порожній — нічого не зробимо
-    while (buffer.length < min && (totalPages === null || currentPage < totalPages)) {
+    while (
+        buffer.length < min &&
+        (totalPages === null || currentPage < totalPages)
+    ) {
         await fetchAndAppendNextPage();
     }
 }
@@ -148,17 +160,19 @@ function updateLoadMoreButton() {
     const btn = document.getElementById("characters-load-more");
     if (!btn) return;
 
-    const morePossible = buffer.length > 0 || (totalPages === null || currentPage < totalPages);
+    const morePossible =
+        buffer.length > 0 || (totalPages === null || currentPage < totalPages);
     const canShow = morePossible && !isLoading;
 
     btn.style.display = canShow ? "inline-block" : "none";
     btn.disabled = !canShow;
 }
 
-// Рендер наступного батча (10 шт). Якщо буфер порожній — дотягуємо сторінку(и)
+// Рендер наступного батча (10 або 20 — залежно від ширини екрана)
 async function renderNextBatch(append) {
-    await ensureBuffer(BATCH_SIZE);
-    const batch = buffer.splice(0, BATCH_SIZE);
+    const batchSize = BATCH;
+    await ensureBuffer(batchSize);
+    const batch = buffer.splice(0, batchSize);
     if (batch.length === 0) {
         updateLoadMoreButton();
         return;
@@ -167,7 +181,7 @@ async function renderNextBatch(append) {
     updateLoadMoreButton();
 }
 
-// Перше завантаження (10 карток)
+// Перше завантаження (динамічний розмір батча)
 async function loadFirstBatch() {
     currentPage = 0;
     totalPages = null;
@@ -175,7 +189,7 @@ async function loadFirstBatch() {
     await renderNextBatch(false);
 }
 
-// Обробник Load more: завжди додаємо ще 10
+// Обробник Load more: додаємо ще batchSize (10/20)
 async function loadMore() {
     if (isLoading) return;
     try {
@@ -203,7 +217,7 @@ async function init() {
     initDropdowns();                 // логіка кастомних дропдаунів
     await loadCardTemplate();        // HBS-картки
     setupLoadMore();                 // кнопка Load more
-    await loadFirstBatch();          // перші 10 карток
+    await loadFirstBatch();          // перші 10/20 карток залежно від ширини
 }
 
 document.addEventListener("DOMContentLoaded", init);
