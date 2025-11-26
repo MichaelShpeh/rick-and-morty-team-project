@@ -3,17 +3,17 @@ console.log('promo.js');
 // ===== ПІДСТАНОВКА КАРТИНОК =====
 
 const imagesConfig = [
-  { selector: '.RickAndMortyUsingAfuturisticDevice', src: '../images/RickAndMortyUsingAfuturisticDevice-1x.png' },
-  { selector: '.ricAndMorty', src: '../images/ricAndMorty-1x.png' },
-  { selector: '.ricAndMortyAndBabochka', src: '../images/ricAndMortyAndBabochka-1x.png' },
-  { selector: '.RicAndBethAndJerry', src: '../images/RicAndBethAndJerry-1x.png' },
-  { selector: '.MortyAndSummerInSpace', src: '../images/MortyAndSummerInSpace-1x.png' },
+  { selector: '.RickAndMortyUsingAfuturisticDevice', src: new URL('../images/RickAndMortyUsingAfuturisticDevice-1x.png', import.meta.url).href },
+  { selector: '.ricAndMorty', src: new URL('../images/ricAndMorty-1x.png', import.meta.url).href },
+  { selector: '.ricAndMortyAndBabochka', src: new URL('../images/ricAndMortyAndBabochka-1x.png', import.meta.url).href },
+  { selector: '.RicAndBethAndJerry', src: new URL('../images/RicAndBethAndJerry-1x.png', import.meta.url).href },
+  { selector: '.MortyAndSummerInSpace', src: new URL('../images/MortyAndSummerInSpace-1x.png', import.meta.url).href },
 ];
 
 imagesConfig.forEach(({ selector, src }) => {
   const img = document.querySelector(selector);
   if (!img) return;
-  img.src = new URL(src, import.meta.url).href;
+  img.src = src;
 });
 
 // ===== СЛАЙДЕР =====
@@ -78,3 +78,6 @@ if (!slider) {
     window.addEventListener('resize', updateSliderPosition);
   }
 }
+
+
+
