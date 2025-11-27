@@ -1,6 +1,5 @@
 @use"../utils/variables";
 @use"../utils/mixins";
-// @use"../utils/breakpoints";
 
 .container {
     width: 100%;
@@ -12,7 +11,6 @@
         padding-bottom: 128px;
     }
 
-    @include media('lg') {}
 }
 
 .characters {
@@ -20,17 +18,10 @@
     z-index: 5;
     overflow: visible;
 
-    @include media('md') {}
-
-    @include media('lg') {}
-
-    /* ===== було grid, переписано на flex ===== */
     &__filters {
         display: flex;
         flex-wrap: wrap;
-        /* еквівалентні вертикальні "ряди" і проміжки задаси gap-ами */
         row-gap: 20px;
-        /* column-gap: 24px; */
         min-width: 320px;
         max-width: 375px;
         overflow: visible;
@@ -38,24 +29,23 @@
         @include media('md') {
             display: flex;
             flex-wrap: wrap;
-            /* відступи задаси сам:
-                column-gap: ...;
-                row-gap: ...; */
+
+
             gap: 16px;
             min-width: 0;
             max-width: none;
             align-items: flex-start;
         }
 
-        @include media('lg') {}
+        @include media('lg') {
+            justify-content: center;
+        }
     }
 
     &__list {
         position: relative;
         z-index: 1;
 
-        /* якщо треба — сітка карток теж флексами */
-        /* display: flex; flex-wrap: wrap; row-gap: 32px; column-gap: 0; */
 
         @include media('md') {
             display: flex;
@@ -68,16 +58,15 @@
             margin-bottom: 64px;
         }
 
-        @include media('lg') {}
+        @include media('lg') {
+            column-gap: 24px;
+        }
     }
 
     &__load-more-wrapper {
         display: flex;
         justify-content: center;
 
-        @include media('md') {}
-
-        @include media('lg') {}
     }
 
     &__load-more-button {
@@ -97,28 +86,24 @@
             height: 42px;
             font-size: 14px;
             line-height: 129%;
+            padding: 12px 24px;
         }
 
-        @include media('lg') {}
     }
 }
 
-/* ====== БЛОК FILTERS (форма з фільтрами) ====== */
+
 
 .filters {
     overflow: visible;
 
-    @include media('md') {}
-
-    @include media('lg') {}
-
     &__group {
-        /* було фікс: 162x68 */
+
         width: 162px;
         height: 68px;
         overflow: visible;
 
-        /* мобільна логіка: 2 у ряд, name — на всю ширину */
+
         flex: 0 0 50%;
 
         @include media('md') {
@@ -126,49 +111,49 @@
             margin: 0;
         }
 
-        @include media('lg') {}
 
         &--name {
-            /* grid-area: name;  — не впливає на flex, залишаю як є */
+
             flex: 0 0 100%;
-            // width: 335px;
 
             @include media('md') {
                 order: 0;
                 flex-basis: 269px;
             }
 
-            @include media('lg') {}
+            @include media('lg') {
+                flex-basis: 233px;
+            }
         }
 
         &--status {
 
-            /* grid-area: status; */
             @include media('md') {
                 order: 1;
                 flex-basis: 178px;
             }
 
-            @include media('lg') {}
+            @include media('lg') {
+                flex-basis: 165px;
+            }
         }
 
         &--species {
 
-            /* grid-area: species; */
             @include media('md') {
                 order: 2;
                 flex-basis: 225px;
             }
 
-            @include media('lg') {}
+            @include media('lg') {
+                flex-basis: 204px;
+            }
         }
 
         &--type {
-
-            /* grid-area: type; */
             @include media('md') {
                 order: 3;
-                    flex-basis: 175px;
+                flex-basis: 175px;
             }
 
 
@@ -176,14 +161,10 @@
         }
 
         &--gender {
-
-            /* grid-area: gender; */
             @include media('md') {
                 order: 4;
                 flex-basis: 167px;
             }
-
-            @include media('lg') {}
         }
     }
 
@@ -199,12 +180,10 @@
             line-height: 129%;
         }
 
-        @include media('lg') {}
     }
 
     &__control-wrapper {
         border: #111 1px;
-        /* виправив "1 px" -> "1px" як валідний синтаксис */
         width: 335px;
         height: 68px;
         margin-top: 8px;
@@ -214,7 +193,6 @@
             width: 100%;
         }
 
-        @include media('lg') {}
     }
 
     &__input {
@@ -230,51 +208,36 @@
         color: #111;
 
         @include media('md') {
+            font-size: 16px;
+            line-height: 112%;
             width: 269px;
             height: 50px;
         }
 
-        @include media('lg') {}
+        @include media('lg') {
+            width: 233px;
+        }
 
         &--search {
             width: 100%;
-            /* padding-right: 80px; */
             box-sizing: border-box;
-
-            @include media('md') {}
-
-            @include media('lg') {}
         }
     }
 
     &__button {
         background-color: var(--light-green);
 
-        @include media('md') {}
-
-        @include media('lg') {}
-
         &--search {
             position: absolute;
             top: 50%;
-            right: 24px; // зсунути всередину справа
+            right: 24px; 
             transform: translateY(-106%);
 
-            @include media('md') {}
-
-            @include media('lg') {}
         }
     }
-
-    // &__select {
-    //   &--status {}
-    //   &--species {}
-    //   &--type {}
-    //   &--gender {}
-    // }
 }
 
-/* ====== БЛОК DROPDOWN (кастомні селекти) ====== */
+
 
 .dropdown {
     position: relative;
@@ -283,8 +246,6 @@
     @include media('md') {
         width: 100%;
     }
-
-    @include media('lg') {}
 
     &__trigger {
         display: flex;
@@ -301,8 +262,6 @@
             width: 100%;
             height: 50px;
         }
-
-        @include media('lg') {}
     }
 
     &__value {
@@ -316,16 +275,10 @@
             font-size: 16px;
             line-height: 112%
         }
-
-        @include media('lg') {}
     }
 
     &__arrow {
         margin-left: auto;
-
-        @include media('md') {}
-
-        @include media('lg') {}
     }
 
     &__menu {
@@ -344,9 +297,7 @@
         top: calc(100% + 6px);
         left: 0;
         right: 0;
-
-        /* високий шар */
-        z-index: 10000; // вище карток, тіней, тощо
+        z-index: 10000;
 
         @include media('md') {
             width: 100%;
@@ -356,8 +307,6 @@
             padding-top: 16px;
             padding-bottom: 8px;
         }
-
-        @include media('lg') {}
     }
 
     &__item {
@@ -375,41 +324,25 @@
             margin-bottom: 8px;
         }
 
-        @include media('lg') {}
 
         &--selected {
             color: #111;
-
-            @include media('md') {}
-
-            @include media('lg') {}
         }
     }
 
     &--open {
         .dropdown__menu {
             display: block;
-
-            @include media('md') {}
-
-            @include media('lg') {}
         }
     }
 }
 
-/* ------------ КАРТКА ПЕРСОНАЖА ------------ */
 
 .character-card {
     margin-top: 40px;
     margin-bottom: 40px;
     display: flex;
-    /* вирівнюємо контент у колонку, як було */
     flex-direction: column;
-    /* якщо це елемент сітки — можна керувати шириною через flex-basis */
-    /* flex: 0 1 100%; */
-
-    // justify-content: center;
-    // text-align: left;
 
     @include media('md') {
         flex: 0 1 50%;
@@ -417,10 +350,14 @@
         flex-direction: column;
         margin: 0;
         max-width: 336px;
-        /* відступи керуватимеш через gap у .characters__list */
     }
 
-    @include media('lg') {}
+    @include media('lg') {
+        flex: 0 1 23%;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
 
     &__image-wrapper {
         display: flex;
@@ -433,7 +370,9 @@
             overflow: hidden;
         }
 
-        @include media('lg') {}
+        @include media('lg') {
+            width: 278px;
+        }
     }
 
     &__image {
@@ -448,11 +387,20 @@
             display: block;
         }
 
-        @include media('lg') {}
+        @include media('lg') {
+            width: 278px;
+            height: 314px;
+            object-fit: cover;
+            display: block;
+        }
     }
 
     &__body {
         width: 336px;
+
+        @include media('lg') {
+            width: 278px;
+        }
     }
 
     &__name {
@@ -469,8 +417,6 @@
             line-height: 112%;
             margin-top: 16px;
         }
-
-        @include media('lg') {}
     }
 
     &__origin {
@@ -482,16 +428,8 @@
         margin-bottom: 4px;
         color: #111;
 
-        @include media('md') {}
-
-        @include media('lg') {}
-
         &--cl {
             color: rgba(17, 17, 17, 0.5);
-
-            @include media('md') {}
-
-            @include media('lg') {}
         }
     }
 
@@ -502,16 +440,8 @@
         line-height: 129%;
         color: #111;
 
-        @include media('md') {}
-
-        @include media('lg') {}
-
         &--cl {
             color: rgba(17, 17, 17, 0.5);
-
-            @include media('md') {}
-
-            @include media('lg') {}
         }
     }
 }
