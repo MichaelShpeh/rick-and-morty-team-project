@@ -6,8 +6,15 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		width: 100%;
 		padding: 20px;
+
+		@include media('md') {
+			padding: 12px 0;
+		}
+
+		@include media('lg') {
+			padding: 12px 0;
+		}
 	}
 
 	&__logo {
@@ -62,6 +69,12 @@
 			transition-timing-function: linear;
 
 			@include media('md') {
+				font-size: 14px;
+				line-height: 18px;
+				padding: 12px 24px;
+			}
+
+			@include media('lg') {
 				font-size: 14px;
 				line-height: 18px;
 				padding: 12px 24px;
