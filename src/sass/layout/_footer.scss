@@ -13,7 +13,7 @@
 	padding: 40px 20px 16px 20px;
 
 	@include media('md') {
-		padding: 66px 32px 16px 32px;
+		padding: 66px 4px 16px 4px;
 	}
 
 	> .container {
@@ -79,10 +79,17 @@
 		display: flex;
 		gap: 20px;
 		flex-direction: column;
+		align-items: center;
 
 		@include media('md') {
 			flex-direction: row;
 			gap: 78px;
+		}
+
+		@include media('lg') {
+			justify-content: space-between;
+			gap: 252px;
+			width: 628px;
 		}
 	}
 
@@ -109,6 +116,10 @@
 	&__links {
 		display: flex;
 		gap: 12px;
+
+		@include media('lg') {
+			gap: 32px;
+		}
 
 		> li {
 			> a {
