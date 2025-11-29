@@ -87,3 +87,23 @@
 
 	}
 }
+@include media("ld") {
+  .rnm-promo__slider {
+    max-width: 1440px;
+  }
+
+  .rnm-slider__slide {
+    flex: 0 0 calc(10% - 20px);
+    margin-right: 10px;
+  }
+
+  .rnm-slider__image {
+    width: 278px;
+    height: 314px;
+  }
+	.rnm-promo__title{
+		width: 606px; 
+
+	}
+}
+

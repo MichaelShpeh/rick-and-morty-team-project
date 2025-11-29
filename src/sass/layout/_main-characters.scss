@@ -111,4 +111,57 @@
       margin-bottom: 128px;
     }
   }
+
 }
+  @include media('lg'){
+  .container {
+    width: 1184px;
+    padding: 0 ;
+  }
+  .main-characters{
+    &__container{
+      display: flex;
+    }
+    &__figure {
+
+      width: 504px;
+      height: 664px;
+      border-radius: 100px;
+      margin-bottom: 0;
+    }
+    &__title{
+      display: flex;
+      align-items: center;
+      font-size: 44px;
+      gap: 12px;
+      margin-bottom: 40px;
+	}
+	  &__title-badge {
+	    width: 145px;
+      height: 56px;       
+      border-radius: 55px;      
+	}
+	  &__title-text {
+      color: #111;
+  }
+    &__description {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 113%;
+      color: #111;
+      width: 648px;
+    }
+    &__name {
+      font-size: 24px;
+      margin-bottom: 25px;
+    }
+    &__layout {
+      flex-direction: row;  
+      align-items: flex-start;
+      gap: 60px;            
+    }
+    &__list {
+      flex: 1;               
+    }
+  }
+  }
