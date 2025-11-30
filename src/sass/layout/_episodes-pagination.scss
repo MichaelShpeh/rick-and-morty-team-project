@@ -1,6 +1,7 @@
 .episodes {
 	width: 375px;
 	margin-bottom: 80px;
+	margin: 0 auto;
 	@include media('md') {
 		width: 768px;
 	}
@@ -10,13 +11,14 @@
 		margin-bottom: 126px;
 	}
 
-	.container {
+	.container--episodes {
 		display: flex;
 		flex-direction: column;
 		padding: 0px;
 
 		@include media('lg') {
 			width: 1184px;
+			margin: 0 auto;
 		}
 	}
 
@@ -294,6 +296,10 @@
 	font-size: 12px;
 	line-height: 117%;
 	color: rgba(250, 250, 250, 0.5);
+
+	@include media('lg') {
+		top: 144px;
+	}
 }
 
 .episodes__airdate-title {
@@ -305,6 +311,9 @@
 	font-size: 12px;
 	line-height: 117%;
 	color: rgba(250, 250, 250, 0.5);
+	@include media('lg') {
+		top: 144px;
+	}
 }
 
 .episodes__season {
@@ -316,6 +325,9 @@
 	position: absolute;
 	top: 212px;
 	left: 20px;
+	@include media('lg') {
+		top: 162px;
+	}
 }
 
 .episodes__airdate {
@@ -327,4 +339,7 @@
 	position: absolute;
 	top: 212px;
 	left: 81px;
+	@include media('lg') {
+		top: 162px;
+	}
 }
