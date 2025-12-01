@@ -68,185 +68,177 @@
 }
 
 .buttons-hero-div {
-    position: absolute;
-    bottom: -65px;
-    height: 147px;
-    overflow: hidden;
-    width: 100%;
-}
-
-.buttons-hero-list {
-    position: relative;
-    width: 1408px;
-    height: 147px;
-    animation: marquee 10s linear infinite alternate;
-}
-
-@keyframes marquee {
-    0% {
-        transform: translateX(0);
+        position: absolute;
+        bottom: -65px;
+        height: 147px;
+        overflow: hidden;
+        width: 100%;
     }
 
-    100% {
-        transform: translateX(-60%);
+    .buttons-hero-list {
+        position: relative;
+        width: 1408px;
+        height: 147px;
+        animation: marquee 10s linear infinite alternate;
     }
-}
 
-.btn {
-    position: absolute;
-    height: 50px;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 112%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100px;
-}
+    @keyframes marquee {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-60%); }
+    }
 
-// /* ----- Размеры кнопок ----- */
-#btn1 {
-    width: 218px;
-}
+    .btn {
+        position: absolute;
+        height: 50px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 112%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100px;
+    }
 
-#btn2 {
-    width: 154px;
-}
+    #btn1 {
+        width: 218px;
+    }
 
-#btn3 {
-    width: 98px;
-}
+    #btn2 {
+        width: 154px;
+    }
 
-#btn4 {
-    width: 158px;
-}
+    #btn3 {
+        width: 98px;
+    }
 
-#btn5 {
-    width: 151px;
-}
+    #btn4 {
+        width: 158px;
+    }
 
-#btn6 {
-    width: 113px;
-}
+    #btn5 {
+        width: 151px;
+    }
 
-#btn7 {
-    width: 124px;
-}
+    #btn6 {
+        width: 113px;
+    }
 
-#btn8 {
-    width: 168px;
-}
+    #btn7 {
+        width: 124px;
+    }
 
-#btn9 {
-    width: 102px;
-}
+    #btn8 {
+        width: 168px;
+    }
 
-#btn10 {
-    width: 124px;
-}
+    #btn9 {
+        width: 102px;
+    }
 
-#btn11 {
-    width: 162px;
-}
+    #btn10 {
+        width: 124px;
+    }
 
-#btn12 {
-    width: 112px;
-}
+    #btn11 {
+        width: 162px;
+    }
 
-/* ----- Позиции и углы ----- */
+    #btn12 {
+        width: 112px;
+    }
 
-#btn1 {
-    left: 0;
-    bottom: 0;
-    background-color: #0D171D;
-    color: #fafafa;
-    transform: rotate(0deg);
-}
+    #btn1 {
+        left: 0;
+        bottom: 0;
+        background-color: #0D171D;
+        color: #fafafa;
+        transform: rotate(0deg);
+    }
 
-#btn2 {
-    left: 65px;
-    bottom: 52px;
-    background-color: #A1D737;
-    transform: rotate(0deg);
-}
+    #btn2 {
+        left: 65px;
+        bottom: 52px;
+        background-color: #A1D737;
+        transform: rotate(0deg);
+    }
 
-#btn3 {
-    left: 163px;
-    bottom: 80px;
-    background-color: #DAF836;
-    transform: rotate(31.18deg);
-}
+    #btn3 {
+        left: 163px;
+        bottom: 80px;
+        background-color: #DAF836;
+        transform: rotate(31.18deg);
+    }
 
-#btn4 {
-    left: 265px;
-    bottom: 0;
-    background-color: #A1D737;
-    transform: rotate(0deg);
-}
+    #btn4 {
+        left: 265px;
+        bottom: 0;
+        background-color: #A1D737;
+        transform: rotate(0deg);
+    }
 
-#btn5 {
-    left: 364px;
-    bottom: 24px;
-    transform: rotate(17deg);
-    background-color: #0D171D;
-    color: #A1D737;
-}
+    #btn5 {
+        left: 364px;
+        bottom: 24px;
+        transform: rotate(17deg);
+        background-color: #0D171D;
+        color: #A1D737;
+    }
 
-#btn6 {
-    left: 530px;
-    bottom: 35px;
-    transform: rotate(132deg);
-    background-color: #DAF836;
-    color: #111111;
-}
+    #btn6 {
+        left: 530px;
+        bottom: 35px;
+        transform: rotate(132deg);
+        background-color: #DAF836;
+        color: #111111;
+    }
 
-#btn7 {
-    left: 580px;
-    bottom: 0;
-    transform: rotate(180deg);
-    background-color: #A1D737;
-    color: #111111;
-}
+    #btn7 {
+        left: 580px;
+        bottom: 0;
+        transform: rotate(180deg);
+        background-color: #A1D737;
+        color: #111111;
+    }
 
-#btn8 {
-    left: 710px;
-    bottom: 0;
-    transform: rotate(0deg);
-    background-color: #0D171D;
-    color: #FAFAFA;
-}
+    #btn8 {
+        left: 710px;
+        bottom: 0;
+        transform: rotate(0deg);
+        background-color: #0D171D;
+        color: #FAFAFA;
+    }
 
-#btn9 {
-    left: 786px;
-    bottom: 30px;
-    transform: rotate(34.53deg);
-    background-color: #DAF836;
-    color: #111111;
-}
+    #btn9 {
+        left: 786px;
+        bottom: 30px;
+        transform: rotate(34.53deg);
+        background-color: #DAF836;
+        color: #111111;
+    }
 
-#btn10 {
-    left: 900px;
-    bottom: 0;
-    background-color: #0D171D;
-    color: #DAF836;
-    transform: rotate(180deg);
-}
+    #btn10 {
+        left: 900px;
+        bottom: 0;
+        background-color: #0D171D;
+        color: #DAF836;
+        transform: rotate(180deg);
+    }
 
-#btn11 {
-    left: 1028px;
-    bottom: 30px;
-    background-color: #DAF836;
-    color: #111111;
-    transform: rotate(148.92deg);
-}
+    #btn11 {
+        left: 1028px;
+        bottom: 30px;
+        background-color: #DAF836;
+        color: #111111;
+        transform: rotate(148.92deg);
+    }
 
-#btn12 {
-    left: 1126px;
-    bottom: 0;
-    background-color: #A1D737;
-    color: #111111;
-    transform: rotate(180deg);
-}
+    #btn12 {
+        left: 1126px;
+        bottom: 0;
+        background-color: #A1D737;
+        color: #111111;
+        transform: rotate(180deg);
+    }
 
 @media screen and (min-width: 768px) {
     .characters-div {
@@ -303,13 +295,8 @@
     }
 
     @keyframes marquee {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(-34%);
-        }
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-34%); }
     }
 }
 
@@ -371,6 +358,11 @@
     @keyframes marquee {
         0%   { transform: translateX(0); }
         100% { transform: translateX(0); }
+    }
+    
+    .buttons-hero-div{
+        top: 652px;
+        height: 173px;
     }
     
     .btn {
@@ -508,4 +500,4 @@
         left: 1319px;
         bottom: 17px;
     }
-    }
+}
