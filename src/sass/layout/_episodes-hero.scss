@@ -1,4 +1,4 @@
-.episodes-hero{
+.episodes-hero {
     background-color: #0D171D;
     position: relative;
     padding-top: 41px;
@@ -6,10 +6,12 @@
     margin-bottom: 105px;
     border-radius: 0 0 60px 60px;
 }
-.episodes-div{
+
+.episodes-div {
     position: relative;
     z-index: 1;
 }
+
 .episodes-gradient {
     position: absolute;
     top: 320px;
@@ -18,37 +20,220 @@
     z-index: 0;
     border-radius: 60px;
 }
-.episodes-title{
+
+.episodes-title {
     font-weight: 600;
     font-size: 40px;
     line-height: 110%;
     color: #fafafa;
     margin-bottom: 14px;
 }
-.episodes-text{
+
+.episodes-text {
     width: 335px;
     font-weight: 400;
     font-size: 14px;
     line-height: 129%;
+    text-align: left;
     color: #fafafa;
     margin-bottom: 24px;
 }
-.episodes-img{
+
+.episodes-img {
     background-color: #A1D737;
     padding: 32px 39px 0 0;
     border-radius: 25px;
     display: block;
-    
-    img{
+
+    img {
         border-radius: 25px;
     }
 }
 
+.buttons-hero-div {
+    position: absolute;
+    bottom: -65px;
+    height: 147px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.buttons-hero-list {
+    position: relative;
+    width: 1408px;
+    height: 147px;
+    animation: marquee 7.5s linear infinite alternate;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-60%);
+    }
+}
+
+.btn {
+    position: absolute;
+    height: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 112%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+}
+
+#btn1 {
+    width: 218px;
+}
+
+#btn2 {
+    width: 154px;
+}
+
+#btn3 {
+    width: 98px;
+}
+
+#btn4 {
+    width: 158px;
+}
+
+#btn5 {
+    width: 151px;
+}
+
+#btn6 {
+    width: 113px;
+}
+
+#btn7 {
+    width: 124px;
+}
+
+#btn8 {
+    width: 168px;
+}
+
+#btn9 {
+    width: 102px;
+}
+
+#btn10 {
+    width: 124px;
+}
+
+#btn11 {
+    width: 162px;
+}
+
+#btn12 {
+    width: 112px;
+}
+
+#btn1 {
+    left: 0;
+    bottom: 0;
+    background-color: #0D171D;
+    color: #fafafa;
+    transform: rotate(0deg);
+}
+
+#btn2 {
+    left: 65px;
+    bottom: 52px;
+    background-color: #A1D737;
+    transform: rotate(0deg);
+}
+
+#btn3 {
+    left: 163px;
+    bottom: 80px;
+    background-color: #DAF836;
+    transform: rotate(31.18deg);
+}
+
+#btn4 {
+    left: 265px;
+    bottom: 0;
+    background-color: #A1D737;
+    transform: rotate(0deg);
+}
+
+#btn5 {
+    left: 364px;
+    bottom: 24px;
+    transform: rotate(17deg);
+    background-color: #0D171D;
+    color: #A1D737;
+}
+
+#btn6 {
+    left: 530px;
+    bottom: 35px;
+    transform: rotate(132deg);
+    background-color: #DAF836;
+    color: #111111;
+}
+
+#btn7 {
+    left: 580px;
+    bottom: 0;
+    transform: rotate(180deg);
+    background-color: #A1D737;
+    color: #111111;
+}
+
+#btn8 {
+    left: 710px;
+    bottom: 0;
+    transform: rotate(0deg);
+    background-color: #0D171D;
+    color: #FAFAFA;
+}
+
+#btn9 {
+    left: 786px;
+    bottom: 30px;
+    transform: rotate(34.53deg);
+    background-color: #DAF836;
+    color: #111111;
+}
+
+#btn10 {
+    left: 900px;
+    bottom: 0;
+    background-color: #0D171D;
+    color: #DAF836;
+    transform: rotate(180deg);
+}
+
+#btn11 {
+    left: 1028px;
+    bottom: 30px;
+    background-color: #DAF836;
+    color: #111111;
+    transform: rotate(148.92deg);
+}
+
+#btn12 {
+    left: 1126px;
+    bottom: 0;
+    background-color: #A1D737;
+    color: #111111;
+    transform: rotate(180deg);
+}
+
 @media screen and (min-width: 768px) {
-    .episodes-hero{
+    .episodes-hero {
         padding-top: 117px;
         padding-bottom: 208px;
     }
+
     .episodes-div {
         display: flex;
         align-items: center;
@@ -92,84 +277,72 @@
         top: 50px;
         right: 20px;
     }
+
     .buttons-hero-list {
         position: relative;
         width: 1408px;
         height: 147px;
         animation: marquee 10s linear infinite alternate;
     }
+
     @keyframes marquee {
-        0%   { transform: translateX(0); }
-        100% { transform: translateX(-34%); }
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-34%);
+        }
     }
 }
 
 @media screen and (min-width: 1440px) {
-    .buttons-hero-list {
-        position: relative;
-        width: 1408px;
-        height: 173px;
-        animation: marquee 10s linear infinite alternate;
+    .episodes-hero{
+        padding-top: 83px;
+        padding-bottom: 106px;
 
-        }
-            .episodes-div{
-                gap: 124px;
+        .episodes-div {
+            gap: 124px;
     
-                .episodes-title{
-                    font-weight: 600;
-                    font-size: 100px;
-                    line-height: 100%;
-                }
+            .episodes-title {
+                font-weight: 600;
+                font-size: 100px;
+                line-height: 100%;
+            }
     
-                .episodes-text{
-                    font-weight: 400;
-                    font-size: 16px;
-                    line-height: 125%;
-                    width: 482px;
-                }
+            .episodes-text {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 125%;
+                width: 482px;
+            }
     
-                .episodes-img{
+            .episodes-img {
                 border-radius: 100px;
     
-                    img{
-                        border-radius: 100px;
-                    }
+                img {
+                    border-radius: 100px;
+                }
     
-                }
             }
-            .episodes-gradient{
+        }
+    }
 
-                img{
-                    width: 550px;
-                height: 500px;
-                }
-            }
+    .episodes-gradient {
+
+        img {
+            width: 550px;
+            height: 500px;
+        }
+    }
 
 
-    .buttons-hero-div{
-        top: 652px;
+    .buttons-hero-div {
+        top: 632px;
         height: 173px;
     }
-    
-    @keyframes marquee {
-        0%   { transform: translateX(0); }
-        100% { transform: translateX(0); }
-    }
-    
+
     .btn {
-        position: absolute;
-        height: 50px;
-        font-weight: 600;
-        font-size: 21px;
-        line-height: 105%;
-        letter-spacing: 0.02em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 100px;
-    }
-    .main-hero {
-        .btn {
         position: absolute;
         height: 50px;
         font-weight: 600;
@@ -230,7 +403,7 @@
         width: 112px;
     }
 
-    
+
     #btn1 {
         left: 0;
         bottom: 17px;
@@ -290,6 +463,5 @@
     #btn12 {
         left: 1319px;
         bottom: 17px;
-    }
     }
 }
