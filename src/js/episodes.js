@@ -1,22 +1,21 @@
 //! імпорти
 import Handlebars from 'handlebars'
 import episodes from '../templates/episodes.hbs?raw'
-import { getCharacter, getCharacters, getLocation, getEpisode } from 'rickmortyapi';
 
-const newsTemplate = Handlebars.compile(episodes);
+const newsTemplate = Handlebars.compile(episodes)
 
 //!
-const list = document.querySelector('.episodes__list');
-const filtInpt = document.querySelector('.episodes__filters-input');
-const filtBut = document.querySelector('.episodes__filters-button');
-const dropdown = document.querySelector('.episodes__dropdown');
-const loadMoreButt = document.querySelector('.episodes__load-button');
+const list = document.querySelector('.episodes__list')
+const filtInpt = document.querySelector('.episodes__filters-input')
+const filtBut = document.querySelector('.episodes__filters-button')
+const dropdown = document.querySelector('.episodes__dropdown')
+const loadMoreButt = document.querySelector('.episodes__load-button')
 
-let page = 0;
+let page = 0
 
-const baseUrl = 'https://rickandmortyapi.com/api/';
-const endPoint = 'episode/?';
-let pagination;
+const baseUrl = 'https://rickandmortyapi.com/api/'
+const endPoint = 'episode/?'
+let pagination
 
 //! фунція запиту на сервер
 async function fetchEpisodes() {
@@ -33,7 +32,7 @@ async function fetchEpisodes() {
 			airDate: article.air_date
 		}))
 		renderList(dataArray)
-		page++;
+		page++
 
 		// console.log(response)
 		console.log(data)
@@ -47,12 +46,12 @@ async function fetchEpisodes() {
 function renderList(data) {
 	data.forEach(item => {
 		const markup = newsTemplate(item)
-		list.innerHTML += markup;
-		const backgrounds = document.querySelectorAll('.episodes__list-item');
+		list.innerHTML += markup
+		const backgrounds = document.querySelectorAll('.episodes__list-item')
 
 		backgrounds.forEach(bg => {
-			bg.style.backgroundImage = `url(${new URL('../images/background-1x.png', import.meta.url).href})`;
-		});
+			bg.style.backgroundImage = `url(${new URL('../images/background-1x.png', import.meta.url).href})`
+		})
 	})
 }
 
@@ -60,14 +59,12 @@ document.addEventListener('DOMContentLoaded', function () {
 	fetchEpisodes()
 })
 
+filtBut.addEventListener('click', () => {
+	dropdown.classList.toggle('is-hidden')
+	filtBut.classList.toggle('rotated')
+})
 
-filtBut.addEventListener("click", () => {
-	dropdown.classList.toggle('is-hidden');
-	filtBut.classList.toggle('rotated');
-});
-
-loadMoreButt.addEventListener("click", () => {
+loadMoreButt.addEventListener('click', () => {
 	fetchEpisodes()
 	page++
-}
-)
+})

@@ -12,5 +12,9 @@
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" id="facebook">
     <path d="M9.82868 3.98403H12V0.168036C10.9487 0.0544523 9.89239 -0.00162514 8.83542 3.58369e-05C5.69394 3.58369e-05 3.54572 1.99203 3.54572 5.64003V8.78402H0V13.056H3.54572V24H7.79596V13.056H11.3301L11.8614 8.78402H7.79596V6.06003C7.79596 4.80003 8.11935 3.98403 9.82868 3.98403Z" fill="currentColor"></path>
   </symbol>
+    <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="close">
+    <path d="M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M5 5L15 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
 </svg>
 
