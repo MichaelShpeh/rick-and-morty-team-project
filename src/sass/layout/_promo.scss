@@ -21,8 +21,8 @@
   &__slider {
     position: relative;
     overflow: hidden;
-    width: 100%;
-    max-width: 320px;      // мобільне «вікно»
+    width: 100%;   
+    max-width: 1440px;
     margin: 32px auto 0;
 
     &--track {
@@ -52,11 +52,11 @@
 
 .rnm-slider {
   &__slide {
-    flex: 0 0 220px;          // 🔥 фіксована ширина картки
+    flex: 0 0 220px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 16px;       // відстань між слайдами
+    margin-right: 16px;
   }
 
   &__image {
@@ -64,10 +64,10 @@
     height: 260px;
     display: block;
     border-radius: 16px;
+    object-fit: cover;
   }
 }
 
-/* tablet / desktop — 3 повних слайди в ряд */
 @include media("md") {
   .rnm-promo__slider {
     max-width: 900px;
@@ -82,28 +82,33 @@
     width: 200px;
     height: 220px;
   }
-	.rnm-promo__title{
-		width: 606px; 
-
-	}
 }
-@include media("ld") {
+@include media("lg") {
   .rnm-promo__slider {
-    max-width: 1440px;
+    position: relative;
+    left: 50%;
+    width: 100vw;      
+    max-width: 1440px;  
+    transform: translateX(-50%);
+    margin-top: 32px;
   }
 
   .rnm-slider__slide {
-    flex: 0 0 calc(10% - 20px);
+    flex: 0 0 314px; 
     margin-right: 10px;
   }
 
   .rnm-slider__image {
-    width: 278px;
-    height: 314px;
+    width: 314px;
+    height: 278px;
+    object-fit: cover; 
   }
-	.rnm-promo__title{
-		width: 606px; 
 
-	}
+  .rnm-promo__title {
+    width: 606px;
+  }
+  .rnm-promo {
+    padding: 80px 0 24px;
+  }
+
 }
-
