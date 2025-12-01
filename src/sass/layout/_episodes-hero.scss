@@ -13,6 +13,8 @@
 .episodes-gradient {
     position: absolute;
     top: 320px;
+    right: 50%;
+    left: 50%;
     z-index: 0;
     border-radius: 60px;
 }
@@ -36,8 +38,6 @@
     padding: 32px 39px 0 0;
     border-radius: 25px;
     display: block;
-    width: 335px;
-    height: 335px;
     
     img{
         border-radius: 25px;
@@ -86,8 +86,6 @@
         padding: 32px 50px 0 0;
         border-radius: 25px;
         display: block;
-        width: 346px;
-        height: 346px;
     }
 
     .episodes-gradient {
@@ -114,15 +112,40 @@
         animation: marquee 10s linear infinite alternate;
 
         }
-        .main-hero-div-text{
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 112%;
-        width: 311px;
-        text-align: left;
-        margin-bottom: 100px;
-    }
-    }
+            .episodes-div{
+                gap: 124px;
+    
+                .episodes-title{
+                    font-weight: 600;
+                    font-size: 100px;
+                    line-height: 100%;
+                }
+    
+                .episodes-text{
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 125%;
+                    width: 482px;
+                }
+    
+                .episodes-img{
+                border-radius: 100px;
+    
+                    img{
+                        border-radius: 100px;
+                    }
+    
+                }
+            }
+            .episodes-gradient{
+
+                img{
+                    width: 550px;
+                height: 500px;
+                }
+            }
+
+
     .buttons-hero-div{
         top: 652px;
         height: 173px;
@@ -269,3 +292,4 @@
         bottom: 17px;
     }
     }
+}
