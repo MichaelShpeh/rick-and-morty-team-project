@@ -27,12 +27,31 @@
         margin-bottom: 28px;
     }
 
-    .gradient {
+    .main-hero-wrapper {
+        position: relative;
+        display: inline-block;
+    }
+
+    .main-hero-wrapper picture {
+        position: relative;
+        z-index: 2;
+        border-radius: 40px;
+    }
+
+    .main-hero-glow {
+        position: absolute;
         width: 335px;
         height: 324px;
-        position: absolute;
-        top: 100px;
-        z-index: -1;
+
+        background: linear-gradient(180deg, #260a45 36.46%, rgba(52, 56, 127, 0) 100%);
+
+        filter: blur(94px);
+        border-radius: 200000px;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
     }
 
     .hero-logo {
@@ -53,12 +72,17 @@
         position: relative;
         width: 1408px;
         height: 147px;
-        animation: marquee 10s linear infinite alternate;
+        animation: marquee 7.5s linear infinite alternate;
     }
 
     @keyframes marquee {
-        0%   { transform: translateX(0); }
-        100% { transform: translateX(-60%); }
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-60%);
+        }
     }
 
     .btn {
@@ -217,63 +241,100 @@
 }
 
 @media screen and (min-width: 768px) {
-    .main-hero{
+    .main-hero {
         padding-top: 30px;
         padding-bottom: 64px;
 
-        &-img{
+        &-img {
             margin-bottom: 176px;
         }
 
-        .hero-logo{
+        .hero-logo {
             width: 462px;
             height: 184px;
             position: absolute;
             top: 400px;
         }
 
-        .gradient{
-          width: 906px;
-          height: 806px;
-          top: 20px;
+        .gradient {
+            width: 906px;
+            height: 806px;
+            top: 20px;
         }
-        .buttons-hero-list {
-        position: relative;
-        width: 1408px;
-        height: 147px;
-        animation: marquee 10s linear infinite alternate;
 
-        
+        .buttons-hero-list {
+            position: relative;
+            width: 1408px;
+            height: 147px;
+            animation: marquee 10s linear infinite alternate;
+
+
+        }
+
+        .main-hero-div-text {
+            width: 380px;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-34%);
+            }
+        }
+
+        .main-hero-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 176px;
+        }
+
+        .main-hero-wrapper picture {
+            position: relative;
+            z-index: 2;
+            border-radius: 40px;
+        }
+
+        .main-hero-glow {
+            position: absolute;
+            width: 335px;
+            height: 324px;
+
+            background: linear-gradient(180deg, #14182c 36.46%, rgba(52, 56, 127, 0) 100%);
+
+            filter: blur(94px);
+            border-radius: 200000px;
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
     }
-    .main-hero-div-text{
-        width: 380px;
-    }
-    @keyframes marquee {
-        0%   { transform: translateX(0); }
-        100% { transform: translateX(-34%); }
-    }
-    }
-    
+
 }
+
 @media screen and (min-width: 1440px) {
-    .main-hero{
+    .main-hero {
         padding-top: 30px;
         padding-bottom: 272px;
 
-        .pictures-hero-main-div{
+        .pictures-hero-main-div {
             position: relative;
         }
 
-        &-div{
+        &-div {
             flex-direction: row-reverse;
             justify-content: start;
         }
 
-        &-img{
+        &-img {
             margin-bottom: 0;
         }
 
-        .hero-logo{
+        .hero-logo {
             width: 462px;
             height: 184px;
             position: absolute;
@@ -281,47 +342,60 @@
             left: 340px;
         }
 
-        .gradient{
-          width: 706px;
-          height: 620px;
-          left: 23%;
-          bottom: -10%;
+        .main-hero-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 0;
         }
+
+        .main-hero-wrapper picture {
+            position: relative;
+            z-index: 2;
+            border-radius: 40px;
+        }
+
+        .main-hero-glow {
+            position: absolute;
+            width: 335px;
+            height: 324px;
+
+            background: linear-gradient(180deg, #14182c 36.46%, rgba(52, 56, 127, 0) 100%);
+
+            filter: blur(94px);
+            border-radius: 200000px;
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
         .buttons-hero-list {
-        position: relative;
-        width: 1408px;
-        height: 173px;
-        animation: marquee 10s linear infinite alternate;
+            position: relative;
+            width: 1408px;
+            height: 173px;
+            animation: marquee 10s linear infinite alternate;
 
         }
-        .main-hero-div-text{
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 112%;
-        width: 311px;
-        text-align: left;
-        margin-bottom: 100px;
+
+        .main-hero-div-text {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 112%;
+            width: 311px;
+            text-align: left;
+            margin-bottom: 60px;
+        }
     }
-    }
-    .buttons-hero-div{
-        top: 652px;
-        height: 173px;
-    }
-    
-    .btn {
-        position: absolute;
-        height: 50px;
-        font-weight: 600;
-        font-size: 21px;
-        line-height: 105%;
-        letter-spacing: 0.02em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 100px;
-    }
+
     .main-hero {
-        .btn {
+        .buttons-hero-div {
+            top: 622px;
+            height: 173px;
+        }
+    }
+
+    .btn {
         position: absolute;
         height: 50px;
         font-weight: 600;
@@ -382,7 +456,7 @@
         width: 112px;
     }
 
-    
+
     #btn1 {
         left: 0;
         bottom: 17px;
@@ -443,5 +517,5 @@
         left: 1319px;
         bottom: 17px;
     }
-    }
+
 }
