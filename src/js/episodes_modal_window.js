@@ -50,7 +50,7 @@ async function openEpisodeModal(episodeId) {
       id: String(episode.id).padStart(3, '0'),
       air_date: episode.air_date,
       characters: chars.map(c => ({
-        name: c.name,
+        name: c.name.split(" ")[0],
         image: c.image,
       })),
     };
