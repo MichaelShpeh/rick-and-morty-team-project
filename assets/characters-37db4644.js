@@ -1,4 +1,4 @@
-import"./main-14a9f174.js";const _="/rick-and-morty-team-project/assets/sprites-cc0aab62.svg",C=async e=>{const t=document.createElement("div");t.className="backdrop";const n=await j(e.episode),a=(Array.isArray(n)?n:[n]).map(o=>{const c=(o.episode||"").match(/S0*?(\d+)E0*?(\d+)/i),s=c?c[1]:"—";return`
+import"./main-3cb628ac.js";const _="/rick-and-morty-team-project/assets/sprites-cc0aab62.svg",C=async e=>{const t=document.createElement("div");t.className="backdrop";const n=await j(e.episode),a=(Array.isArray(n)?n:[n]).map(o=>{const c=(o.episode||"").match(/S0*?(\d+)E0*?(\d+)/i),s=c?c[1]:"—";return`
 				<li>
 					<h3>${o.name}</h3>
 					<div class="characters__modal--episodes-list-season">
