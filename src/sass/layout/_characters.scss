@@ -23,6 +23,9 @@
 		min-width: 320px;
 		max-width: 375px;
 		overflow: visible;
+		margin-inline: auto;
+			justify-content: center;
+			justify-items: start;
 
 		@include media('md') {
 			display: flex;
@@ -40,28 +43,30 @@
 	}
 
 	&__list {
-		position: relative;
-		z-index: 1;
+		display: flex;
+			flex-direction: column;
+			align-items: center;
 
 		@include media('md') {
 			display: grid;
-			grid-template-columns: repeat(2, max-content);
-			grid-auto-rows: max-content;
-			justify-content: center;
-
-			column-gap: 32px; 
-			row-gap: 64px;
-			margin-top: 64px;
-			margin-bottom: 64px;
+				grid-template-columns: repeat(2, max-content);
+				grid-auto-rows: max-content;
+				justify-content: center;
+				align-items: start;
+				column-gap: 32px;
+				row-gap: 64px;
+				margin-top: 64px;
+				margin-bottom: 64px;
 		}
 
 		@include media('lg') {
 			display: flex;
-			flex-wrap: wrap;
-			align-items: flex-start;
-			justify-content: center;
-			column-gap: 24px;
-			row-gap: 64px;
+				flex-direction: row;
+				flex-wrap: wrap;
+				align-items: flex-start;
+				justify-content: center;
+				column-gap: 24px;
+				row-gap: 64px;
 		}
 	}
 
@@ -95,22 +100,46 @@
 }
 
 .filters {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		"name   name"
+		"status species"
+		"type   gender";
+	row-gap: 20px;
+	column-gap: 16px;
+	min-width: 320px;
+	max-width: 375px;
 	overflow: visible;
 
+	@include media('md') {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+		min-width: 0;
+		max-width: none;
+		align-items: flex-start;
+		justify-content: flex-start;
+	}
+
+	@include media('lg') {
+		justify-content: center;
+	}
+
+
 	&__group {
-		width: 162px;
-		height: 68px;
-		overflow: visible;
-
-		flex: 0 0 50%;
-
-		@include media('md') {
-			flex: 0 0 auto;
-			margin: 0;
-		}
+			width: 162px;
+			height: 68px;
+			overflow: visible;
+		
+			@include media('md') {
+				flex: 0 0 auto;
+				margin: 0;
+			}
 
 		&--name {
-			flex: 0 0 100%;
+			grid-area: name;
+
 
 			@include media('md') {
 				order: 0;
@@ -123,6 +152,8 @@
 		}
 
 		&--status {
+
+			grid-area: status;
 			@include media('md') {
 				order: 1;
 				flex-basis: 178px;
@@ -134,6 +165,7 @@
 		}
 
 		&--species {
+			grid-area: species;
 			@include media('md') {
 				order: 2;
 				flex-basis: 225px;
@@ -145,6 +177,8 @@
 		}
 
 		&--type {
+
+			grid-area: type;
 			@include media('md') {
 				order: 3;
 				flex-basis: 175px;
@@ -154,6 +188,8 @@
 		}
 
 		&--gender {
+
+			grid-area: gender;
 			@include media('md') {
 				order: 4;
 				flex-basis: 167px;
@@ -296,7 +332,6 @@
 
 	&__item {
 		position: relative;
-		/* для іконки */
 		font-family: var(--font-family);
 		font-weight: 400;
 		font-size: 12px;
@@ -305,7 +340,6 @@
 		margin-bottom: 4px;
 		margin-left: 24px;
 		padding-right: 36px;
-		/* місце під іконку */
 
 		@include media('md') {
 			font-size: 14px;
@@ -314,7 +348,6 @@
 			padding-right: 40px;
 		}
 
-		/* іконка-пальчик (твій SVG, як data-URI) */
 		&::after {
 			content: "";
 			position: absolute;
