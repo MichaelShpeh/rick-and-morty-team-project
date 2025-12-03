@@ -2,8 +2,11 @@
 	width: 375px;
 	margin-bottom: 80px;
 	margin: 0 auto;
+	margin-bottom: 80px;
+
 	@include media('md') {
 		width: 768px;
+		margin-bottom: 128px;
 	}
 
 	@include media('lg') {
@@ -23,6 +26,8 @@
 	}
 
 	&-styles {
+		margin: 0 auto;
+
 		@include media('md') {
 			width: 439px;
 			height: 76px;
@@ -30,7 +35,6 @@
 			flex-direction: row;
 			align-items: center;
 			justify-content: space-between;
-			margin: 0 auto;
 			margin-bottom: 64px;
 		}
 	}
@@ -65,11 +69,11 @@
 	}
 
 	&__input {
+		width: 335px;
+		height: 46px;
 		border: 1.5px solid #111;
 		border-radius: 100px;
 		padding: 14px 24px;
-		width: 335px;
-		height: 46px;
 		background: var(--light-green);
 		position: absolute;
 		top: 22px;
@@ -81,7 +85,7 @@
 		}
 	}
 
-	&__input::placeholder {
+	&__input {
 		font-family: var(--font-family);
 		font-weight: 400;
 		font-size: 14px;
@@ -178,7 +182,6 @@
 		box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.15);
 		background: #fafafa;
 		overflow-y: scroll;
-		outline: 1px solid yellowgreen;
 
 		@include media('md') {
 			width: 190px;
@@ -222,7 +225,7 @@
 	&__list {
 		width: 335px;
 		margin: 0 auto;
-		margin-bottom: 20px;
+		margin-bottom: 40px;
 
 		@include media('md') {
 			width: 704px;
@@ -230,6 +233,7 @@
 			flex-direction: row;
 			flex-wrap: wrap;
 			gap: 32px;
+			margin-bottom: 64px;
 		}
 
 		@include media('lg') {
@@ -248,7 +252,7 @@
 		border-radius: 18px;
 		margin-bottom: 20px;
 		background: var(--black);
-		cursor: pointer;;
+		cursor: pointer;
 
 		@include media('md') {
 			width: 336px;
