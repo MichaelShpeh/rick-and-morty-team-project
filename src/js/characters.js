@@ -214,4 +214,4 @@ async function init() {
 	await loadFirstBatch();          // перший батч (10 або 20)
 }
 
-document.addEventListener("DOMContentLoaded", init);
+document.addEventListener('DOMContentLoaded', init)

@@ -1,77 +1,58 @@
-(function(){
-  const SPEED = 0.6; // px per frame — увеличь или уменьшай
-  const GAP_AFTER_TELEPORT = 20; // отступ слева при телепортации
+document.addEventListener("DOMContentLoaded", () => {
+    // console.log("DOM полностью загружен");
 
-  const container = document.querySelector('.buttons-hero-div');
-  const buttons = Array.from(document.querySelectorAll('.btn'));
+    // Проверяем, появился ли список кнопок
+    const interval = setInterval(() => {
+        const list = document.querySelector(".buttons-hero-list");
+        // console.log("Проверяем наличие .buttons-hero-list:", list);
 
-  if (!container || buttons.length === 0) {
-    console.warn('Контейнер или кнопки не найдены');
-    return;
-  }
+        if (!list) return;
 
-  // Стартовая инициализация
-  function init() {
-    const contRect = container.getBoundingClientRect();
+        clearInterval(interval);
+        // console.log(".buttons-hero-list найден, останавливаем интервал");
 
-    buttons.forEach(btn => {
-      const rect = btn.getBoundingClientRect();
+        // вычисляем максимальную ширину списка по кнопкам
+        const buttons = list.querySelectorAll(".btn");
+        // console.log("Найдено кнопок:", buttons.length);
 
-      // вычисляем позицию кнопки относительно левого края контейнера
-      const posRelative = rect.left - contRect.left;
+        let maxRight = 0;
+        buttons.forEach(btn => {
+            const rect = btn.getBoundingClientRect();
+            const left = btn.offsetLeft;
+            const width = rect.width;
+            const right = left + width;
+            if (right > maxRight) maxRight = right;
+            // console.log(`Кнопка ${btn.textContent}: left=${left}, width=${width}, right=${right}`);
+        });
 
-      // фиксируем ширину (она понадобится)
-      btn.dataset.w = rect.width;
+        list.style.width = maxRight + "px";
+        // console.log("Установлена ширина списка:", maxRight);
 
-      // установим left:0 чтобы не конфликтовало с transform
-      btn.style.left = '0px';
+        // клонируем список
+        const clone = list.cloneNode(true);
+        clone.classList.add("clone");
+        clone.style.left = maxRight + "px";
+        list.parentNode.appendChild(clone);
+        // console.log("Создан клон списка и добавлен в DOM");
 
-      // сохраним текущую позицию в dataset (в пикселях)
-      btn.dataset.pos = posRelative;
+        // анимация
+        let x = 0;
+        const speed = 0.7;
+        // console.log("Запускаем анимацию");
 
-      // применяем transform с начальной позицией
-      btn.style.transform = `translateX(${posRelative}px)`;
-    });
-  }
+        function frame() {
+            x -= speed;
+            list.style.transform = `translateX(${x}px)`;
+            clone.style.transform = `translateX(${x}px)`;
 
-  // Основной цикл
-  let lastTime = 0;
-  function tick(time) {
-    // time — DOMHighResTimeStamp, но мы делаем постоянный шаг в px/frame для простоты.
-    // Можно сделать на основе delta, но px/frame даёт стабильный результат.
-    const contRect = container.getBoundingClientRect();
+            if (Math.abs(x) >= maxRight) {
+                x = 0;
+                // console.log("Сброс позиции до 0");
+            }
 
-    buttons.forEach(btn => {
-      let pos = parseFloat(btn.dataset.pos);
-      const w = parseFloat(btn.dataset.w) || btn.offsetWidth;
+            requestAnimationFrame(frame);
+        }
 
-      pos += SPEED; // передвигаем вправо
-
-      // текущая абсолютная позиция левого края кнопки = contRect.left + pos
-      const absLeft = contRect.left + pos;
-
-      // если левый край полностью вышел за правую границу контейнера — телепортируем влево
-      if (absLeft > contRect.right) {
-        pos = -w - GAP_AFTER_TELEPORT;
-      }
-
-      // сохраняем позицию и применяем трансформ
-      btn.dataset.pos = pos;
-      btn.style.transform = `translateX(${pos}px)`;
-    });
-
-    requestAnimationFrame(tick);
-  }
-
-  // Запуск
-  init();
-  requestAnimationFrame(tick);
-
-  // Если окно ресайзится — пересчитываем начальные позиции
-  window.addEventListener('resize', () => {
-    init();
-  });
-
-  // Опция: остановка при наведении (если хочешь) — тут просто уменьшает скорость
-  container.addEventListener('mouseenter', ()=> { /* можно: SPEED = 0; но const — поэтому оставил пустым */ });
-})();
+        frame();
+    }, 50);
+});

@@ -6,6 +6,14 @@
     border-radius: 0 0 60px 60px;
     position: relative;
 
+    .yakir{
+        position: absolute;
+        right: 20px;
+        bottom: 40px;
+        cursor: pointer;
+        z-index: 10;
+    }
+
     &-div {
         display: flex;
         flex-direction: column;
@@ -40,15 +48,15 @@
 
     .main-hero-glow {
         position: absolute;
-        width: 335px;
-        height: 324px;
+        width: 250px;
+        height: 200px;
 
-        background: linear-gradient(180deg, #260a45 36.46%, rgba(52, 56, 127, 0) 100%);
+        background: linear-gradient(180deg, #532e6d 36.46%, rgba(52, 56, 127, 0) 100%);
 
         filter: blur(94px);
         border-radius: 200000px;
 
-        top: 50%;
+        bottom: -150px;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
@@ -63,27 +71,27 @@
     .buttons-hero-div {
         position: absolute;
         bottom: -65px;
-        height: 147px;
+        height: 175px;
         overflow: hidden;
         width: 100%;
     }
 
-    .buttons-hero-list {
-        position: relative;
-        width: 1408px;
-        height: 147px;
-        animation: marquee 7.5s linear infinite alternate;
-    }
+    .buttons-hero-list{
+    position: relative;
+    width: 1400px;
+    height: 173px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
+}
 
-    @keyframes marquee {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(-60%);
-        }
-    }
+.buttons-hero-list.clone{
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
+}
 
     .btn {
         position: absolute;
@@ -245,6 +253,21 @@
         padding-top: 30px;
         padding-bottom: 64px;
 
+        .yakir{
+            svg{
+                width: 72px !important;
+                height: 72px !important;
+            }
+            right: 32px;
+            bottom: 64px;
+        }
+
+        .stars-main{
+            position: absolute;
+            bottom: -90px;
+            right: 52px;
+        }
+
         &-img {
             margin-bottom: 176px;
         }
@@ -262,27 +285,8 @@
             top: 20px;
         }
 
-        .buttons-hero-list {
-            position: relative;
-            width: 1408px;
-            height: 147px;
-            animation: marquee 10s linear infinite alternate;
-
-
-        }
-
         .main-hero-div-text {
             width: 380px;
-        }
-
-        @keyframes marquee {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-34%);
-            }
         }
 
         .main-hero-wrapper {
@@ -302,12 +306,12 @@
             width: 335px;
             height: 324px;
 
-            background: linear-gradient(180deg, #14182c 36.46%, rgba(52, 56, 127, 0) 100%);
+            background: linear-gradient(180deg, #532e6d 36.46%, rgba(52, 56, 127, 0) 100%);
 
             filter: blur(94px);
             border-radius: 200000px;
 
-            top: 50%;
+            bottom: -250px;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1;
@@ -320,6 +324,15 @@
     .main-hero {
         padding-top: 30px;
         padding-bottom: 272px;
+
+        .yakir{
+            svg{
+                width: 80px !important;
+                height: 80px !important;
+            }
+            right: 128px;
+            bottom: 64px;
+        }
 
         .pictures-hero-main-div {
             position: relative;
@@ -356,26 +369,18 @@
 
         .main-hero-glow {
             position: absolute;
-            width: 335px;
-            height: 324px;
+            width: 435px;
+            height: 224px;
 
-            background: linear-gradient(180deg, #14182c 36.46%, rgba(52, 56, 127, 0) 100%);
+            background: linear-gradient(180deg, #532e6d 36.46%, rgba(52, 56, 127, 0) 100%);
 
             filter: blur(94px);
             border-radius: 200000px;
 
-            top: 50%;
+            bottom: -100px;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1;
-        }
-
-        .buttons-hero-list {
-            position: relative;
-            width: 1408px;
-            height: 173px;
-            animation: marquee 10s linear infinite alternate;
-
         }
 
         .main-hero-div-text {
