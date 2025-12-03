@@ -60,7 +60,9 @@
 
 .character-wrapper {
         position: relative;
-        display: inline-block;
+        display: flex;
+        flex-direction: row;
+        align-items: end;
     }
 
     .character-wrapper picture {
@@ -71,7 +73,6 @@
     
     .character-glow {
         position: absolute;
-        inset: 0; /* растягиваем фон под всю картинку */
         background: linear-gradient(
             180deg,
             rgba(161, 215, 55, 0.8) 36.46%,
@@ -80,31 +81,31 @@
         filter: blur(94px);
         border-radius: 200000px;
         z-index: 1;
+        width: 295px;
+        height: 200px;
     }
 
 .buttons-hero-div {
     position: absolute;
     bottom: -65px;
-    height: 147px;
+    height: 167px;
     overflow: hidden;
     width: 100%;
 }
 
-.buttons-hero-list {
-    position: relative;
-    width: 1408px;
-    height: 147px;
-    animation: marquee 7.5s linear infinite alternate;
+.buttons-hero-list{
+    height: 163px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
 }
 
-@keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-60%);
-    }
+.buttons-hero-list.clone{
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
 }
 
 .btn {
@@ -307,26 +308,11 @@
         top: 50px;
         right: 20px;
     }
-
-    .buttons-hero-list {
-        position: relative;
-        width: 1408px;
-        height: 147px;
-        animation: marquee 10s linear infinite alternate;
-    }
-
-    @keyframes marquee {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(-34%);
-        }
-    }
     .character-wrapper {
         position: relative;
-        display: inline-block;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
     .character-wrapper picture {
@@ -337,7 +323,6 @@
     
     .character-glow {
         position: absolute;
-        inset: 0;
         background: linear-gradient(
             180deg,
             rgba(161, 215, 55, 0.8) 36.46%,
@@ -346,6 +331,8 @@
         filter: blur(94px);
         border-radius: 200000px;
         z-index: 1;
+        width: 283px;
+        height: 200px;
     }
 }
 
@@ -360,18 +347,16 @@
     }
     .character-wrapper {
         position: relative;
-        display: inline-block;
     }
 
     .character-wrapper picture {
         position: relative;
         z-index: 2;
-        border-radius: 40px;
+        border-radius: 100px;
     }
     
     .character-glow {
         position: absolute;
-        inset: 0; /* растягиваем фон под всю картинку */
         background: linear-gradient(
             180deg,
             rgba(161, 215, 55, 0.8) 36.46%,
@@ -380,6 +365,8 @@
         filter: blur(94px);
         border-radius: 200000px;
         z-index: 1;
+        width: 506px;
+        height: 300px;
     }
 
     .characters-title {
@@ -420,14 +407,6 @@
         .buttons-hero-div {
             top: 602px;
             height: 173px;
-        }
-
-        .buttons-hero-list {
-            position: relative;
-            width: 1408px;
-            height: 173px;
-            animation: marquee 10s linear infinite alternate;
-
         }
 
         .btn {
