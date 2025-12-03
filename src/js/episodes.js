@@ -77,7 +77,7 @@ async function fetchEpisodes() {
 		}
 
 		function filterCardsDropdown(value) {
-			const filteredData = dataArray.filter(item => item.season.slice(2,3).includes(value));
+			const filteredData = dataArray.filter(item => item.season.slice(2, 3).includes(value));
 			console.log("filteredData", filteredData)
 			renderListFiltered(filteredData);
 		}
